@@ -8,4 +8,9 @@ class BillsController < ApplicationController
     render 'new.html.erb'
   end
 
+  def show
+    @bill = Bill.find_by(id: params[:id])
+    render 'show.html.erb'
+  end
+
 end
