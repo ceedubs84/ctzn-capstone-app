@@ -5,10 +5,10 @@
 <% current_user.bills.each do |bill| %>
   <div>
     <h3>Congress: <%= bill.congress %> </h3>
-    <p>Number: <%= bill.bill %> </p>
+    <a href="/bills/<%= bill.id %>"><h4>Number: <%= bill.bill %> </h4></a>
     <p>Bill Created: <%= bill.created_at %> </p>
     <p>Bill URI: <%= bill.bill_uri %> </p>  
   </div>
 <% end %>
 
-<a href="/">Back to</a>
+<a href="/logout">Log out!</a>
