@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222004018) do
+ActiveRecord::Schema.define(version: 20161222014155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,19 +32,8 @@ ActiveRecord::Schema.define(version: 20161222004018) do
     t.string   "congress"
     t.string   "bill"
     t.text     "bill_uri"
-    t.text     "title"
-    t.string   "sponsor"
-    t.string   "introduced_date"
-    t.string   "cosponsors"
-    t.text     "committees"
-    t.string   "latest_major_action_date"
-    t.text     "latest_major_action"
-    t.text     "sponsor_uri"
-    t.text     "gpo_pdf_uri"
-    t.string   "house_passage_vote"
-    t.string   "senate_passage_vote"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
