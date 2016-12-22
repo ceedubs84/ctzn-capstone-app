@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217201738) do
+ActiveRecord::Schema.define(version: 20161222004018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20161217201738) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "congress"
-    t.string   "number"
+    t.string   "bill"
     t.text     "bill_uri"
     t.text     "title"
-    t.string   "sponsor_id"
+    t.string   "sponsor"
     t.string   "introduced_date"
     t.string   "cosponsors"
     t.text     "committees"

@@ -1,7 +1,9 @@
-<h2>Theez iz the Billz!</h2>
+<h1>Theez iz the Billz!</h1>
 <% @bills.each do |bill| %>
   <div>
-    <p>Title: <%= bill.title %> </p>
-    <p>Number: <%= bill.number %> </p>
+    <h3> <%= bill.title %> </h3>
+    <p>Number: <%= bill.bill %> </p>
+    <p>Sponsor: <%= bill.sponsor %> </p>
+    <p>Date Introduced: <%= bill.introduced_date %> </p>  
   </div>
 <% end %>
