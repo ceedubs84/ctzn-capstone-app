@@ -1,5 +1,8 @@
-<h1>Theez iz the Billz!</h1>
-<% @bills.each do |bill| %>
+<div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
+
+
+<h2>Theez iz all yo Billz!</h2>
+<% current_user.bills.each do |bill| %>
   <div>
     <h3>Congress: <%= bill.congress %> </h3>
     <p>Number: <%= bill.bill %> </p>
@@ -7,3 +10,5 @@
     <p>Bill URI: <%= bill.bill_uri %> </p>  
   </div>
 <% end %>
+
+<a href="/">Back to</a>
