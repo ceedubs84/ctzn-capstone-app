@@ -1,7 +1,7 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
 
 
-<h2>Theez iz all yo Billz!</h2>
+<h2>Here are some Billz!</h2>
 <% current_user.bills.each do |bill| %>
   <div>
     <h3>Congress: <%= bill.congress %> </h3>
