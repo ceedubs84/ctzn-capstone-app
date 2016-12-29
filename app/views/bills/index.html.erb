@@ -5,6 +5,10 @@
 <% @bills.each do |bill| %>
   <a href="/bills/#{:id}">Bill #: <%= bill["number"] %></a>
   <div>Title: <%= bill["title"] %></div>
+  <div>URL: <%= bill["bill_uri"] %></div>
+  <div>
+    <button>Add +</button>
+  </div>
 <% end %>
 
 <div><a href="/logout">Log out!</a></div>
