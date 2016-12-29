@@ -1,14 +1,10 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
 
-
 <h2>Here are some Billz!</h2>
-<% current_user.bills.each do |bill| %>
-  <div>
-    <h3>Congress: <%= bill.congress %> </h3>
-    <a href="/bills/<%= bill.id %>"><h4>Number: <%= bill.bill %> </h4></a>
-    <p>Bill Created: <%= bill.created_at %> </p>
-    <p>Bill URI: <%= bill.bill_uri %> </p>  
-  </div>
+
+<% @bills.each do |bill| %>
+  <a href="/bills/#{:id}">Bill #: <%= bill["number"] %></a>
+  <div>Title: <%= bill["title"] %></div>
 <% end %>
 
-<a href="/logout">Log out!</a>
+<div><a href="/logout">Log out!</a></div>
