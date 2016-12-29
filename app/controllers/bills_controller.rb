@@ -18,7 +18,13 @@ class BillsController < ApplicationController
   end
 
   def show
-    @bill = Bill.find_by(id: params[:id])
+    congress = params[:congress] || "114"
+    chamber = params[:chamber] || "house"
+    @bill = Unirest.get(
+      "https://api.propublica.org/congress/v1/#{congress}/bills/#{params[:id]}.json",
+      headers: HEADERS
+    ).body
+    # @bills = @data["results"][0]["bills"]
     render 'show.html.erb'
   end
 

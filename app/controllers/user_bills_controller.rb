@@ -1,5 +1,5 @@
 class UserBillsController < ApplicationController
-  HEADERS = { 'X-API-Key' => "Token token=#{ENV['ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy']}"}
+  HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
     @bills = Unirest.get(
