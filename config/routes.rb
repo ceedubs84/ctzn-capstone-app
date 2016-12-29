@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post '/bills' => 'bills#create'
   get '/bills/:id' => 'bills#show'
 
+  get '/user_bills' => 'user_bills#index'
+  get '/user_bills/:id' => 'user_bills#show'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
