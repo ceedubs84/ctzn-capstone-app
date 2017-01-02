@@ -3,9 +3,8 @@
 <h2>Here are some Billz!</h2>
 
 <% @bills.each do |bill| %>
-  <a href="/bills/<%= bill["number"] %>"> <%= bill["number"] %></a>
+  <a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a>
   <div>Title: <%= bill["title"] %></div>
-  <div>URL: <%= bill["bill_uri"] %></div>
   <div>
     <button>Add +</button>
   </div>

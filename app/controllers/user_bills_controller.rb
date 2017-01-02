@@ -2,8 +2,8 @@ class UserBillsController < ApplicationController
   HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
-    @bills = Unirest.get(
-      "#{ENV['https://api.propublica.org/congress/v1/114/house/bills/introduced.json']}/user_bills",
+    @data = Unirest.get(
+      "#{['https://api.propublica.org/congress/v1/114/house/bills/introduced.json']}",
       headers: HEADERS
     ).body
     render 'index.html.erb'

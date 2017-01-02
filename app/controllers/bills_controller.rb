@@ -18,14 +18,13 @@ class BillsController < ApplicationController
   end
 
   def show
-    congress = params[:congress] || "114"
-    chamber = params[:chamber] || "house"
-    @bill = Unirest.get(
-      "https://api.propublica.org/congress/v1/#{congress}/bills/#{params[:id]}.json",
+    new_uri = (params[:id]).gsub('-', '/')
+    @datum = Unirest.get(
+      "#{new_uri}",
       headers: HEADERS
     ).body
-    # @bills = @data["results"][0]["bills"]
-    render 'show.html.erb'
+    @bill = @datum["results"][0]["title"]
+    render 'show.html.erb'  
   end
 
 end
