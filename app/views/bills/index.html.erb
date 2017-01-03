@@ -5,9 +5,9 @@
 <% @bills.each do |bill| %>
   <a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a>
   <div>Title: <%= bill["title"] %></div>
-  <div>
-    <button>Add +</button>
-  </div>
+  <% form_tag "/user_bills", method: :post do %>
+    <%= submit_tag "Add +" %>
+  <% end %>
 <% end %>
 
 <div><a href="/logout">Log out!</a></div>

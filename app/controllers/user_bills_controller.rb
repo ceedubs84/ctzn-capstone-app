@@ -9,4 +9,13 @@ class UserBillsController < ApplicationController
     render 'index.html.erb'
   end
 
+  def create
+    user_bill = UserBill.new(
+      user_id: current_user.id,
+      bill_uri: params[:bill_uri]
+    )
+    user_bill.save
+    redirect_to "/user_bills"
+  end
+
 end
