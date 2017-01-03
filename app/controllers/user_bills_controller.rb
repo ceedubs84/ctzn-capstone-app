@@ -9,10 +9,4 @@ class UserBillsController < ApplicationController
     render 'index.html.erb'
   end
 
-  def show
-    @bill = Unirest.get(
-      "#{ENV['API_BASE_URL']}/user_bills/#{params[:id]}"
-    ).body
-    render 'show.html.erb'
-  end
 end
