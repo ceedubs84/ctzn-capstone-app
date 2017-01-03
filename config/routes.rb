@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/bills/:id' => 'bills#show', :constraints => { :id => /[^\/]+/ }
 
   get '/user_bills' => 'user_bills#index'
+  post '/user_bills' => 'user_bills#create'
   get '/user_bills/:id' => 'user_bills#show'
 
   get '/signup' => 'users#new'
