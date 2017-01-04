@@ -1,9 +1,14 @@
+<div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
+
 <h2>Bill Detail</h2>
 <%= @bill %>
 
-<div>
-    <button>Add +</button>
-</div>
+<%= form_tag "/user_bills", method: :post do %>
+  <div>
+    <%= hidden_field_tag :bill_uri, @bill %>
+  </div>
+  <%= submit_tag "Add +" %>
+<% end %>
 
 
 <a href="/"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Back to Index</a>

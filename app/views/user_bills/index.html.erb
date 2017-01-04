@@ -1,10 +1,9 @@
-<div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
-
-<h2>Theez iz all yo Billz!</h2>
+<h2><%= current_user.first_name %>'s Billz!</h2>
 <% @user_bills.each do |user_bill| %>
   <div>
     <h3>Bill URI: <%= user_bill.bill_uri %> </h3>
   </div>
 <% end %>
 
+<a href="/"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Back to Index</a>
 <a href="/logout">Log out!</a>
