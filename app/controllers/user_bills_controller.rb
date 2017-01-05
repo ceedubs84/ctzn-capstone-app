@@ -12,7 +12,7 @@ class UserBillsController < ApplicationController
       bill_uri: params[:bill_uri],
       vote: 0
     )
-    user_bill.save
+    user_bill.save!
     redirect_to "/user_bills"
   end
 
