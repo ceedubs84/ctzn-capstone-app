@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/user_bills' => 'user_bills#index'
   post '/user_bills' => 'user_bills#create'
   get '/user_bills/:id' => 'user_bills#show'
+  delete '/user_bills/:id' => 'user_bills#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
