@@ -6,6 +6,8 @@
 <% @bills.each do |bill| %>
   <a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a>
   <div>Title: <%= bill["title"] %></div>
+  <div>Introduced: <%= bill["introduced_date"] %></div>
+  <div>Last Major Action: <%= bill["latest_major_action"] %> on <%= bill["latest_major_action_date"] %></div>
 <% end %>
 
 <div><a href="/logout">Log out!</a></div>
