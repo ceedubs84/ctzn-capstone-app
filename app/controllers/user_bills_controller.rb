@@ -17,7 +17,10 @@ class UserBillsController < ApplicationController
   end
 
   def destroy
-    
+    user_bill = UserBill.find_by(id: params[:id])
+    user_bill.destroy
+    # flash[:warning] = "Bill Removed Successfully!"
+    redirect_to "/user_bills"
   end
 
 end
