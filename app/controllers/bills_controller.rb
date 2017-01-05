@@ -2,8 +2,8 @@ class BillsController < ApplicationController
   HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
-    congress = params[:congress] || "114"
-    chamber = params[:chamber] || "house"
+    congress = params[:congress] || "115"
+    chamber = params[:chamber] || "senate"
     type = params[:type] || "introduced"
     @data = Unirest.get(
       "https://api.propublica.org/congress/v1/#{congress}/#{chamber}/bills/#{type}.json",
