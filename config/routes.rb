@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get '/user_bills/:id' => 'user_bills#show'
   delete '/user_bills/:id' => 'user_bills#destroy'
 
+  get '/checkpoints' => 'checkpoints#index'
+  post '/checkpoints/' => 'checkpoints#create'
+  get '/checkpoints/:id' => 'checkpoints#show'
+  delete '/checkpoints/:id' => 'checkpoints#destroy'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
