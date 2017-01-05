@@ -16,4 +16,8 @@ class UserBillsController < ApplicationController
     redirect_to "/user_bills"
   end
 
+  def destroy
+    
+  end
+
 end
