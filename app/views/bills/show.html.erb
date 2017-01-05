@@ -2,11 +2,14 @@
 
 
 <h2>Bill Detail</h2>
-<div><%= @bill %></div>
+<bold><%= @bill["bill"] %></bold>
+<div><em><%= @bill["title"] %></em></div>
+<div>Sponsor: <%= @bill["sponsor"] %></div>
+<div><a href="<%= @bill["gpo_pdf_uri"] %>">Link to Full Bill PDF</a></div>
 
 <%= form_tag "/user_bills", method: :post do %>
   <div>
-    <%= hidden_field_tag :bill_uri, @bill %>
+    <%= hidden_field_tag :bill_uri, @bill["bill_uri"] %>
   </div>
   <%= submit_tag "Add +" %>
 <% end %>

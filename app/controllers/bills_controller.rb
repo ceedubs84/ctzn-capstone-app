@@ -23,7 +23,7 @@ class BillsController < ApplicationController
       "#{new_uri}",
       headers: HEADERS
     ).body
-    @bill = @datum["results"][0]["bill_uri"]
+    @bill = @datum["results"][0]
     render 'show.html.erb'  
   end
 
