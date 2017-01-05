@@ -1,0 +1,15 @@
+<%= form_tag '/checkpoints', method: :post do %>
+  <div>
+    <%= label_tag :date %>
+    <%= text_field_tag :date, Time.now %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, "Description" %>
+  </div>
+  <div>
+    <%= label_tag :bill_id %>
+    <%= text_field_tag :bill_id, "" %>
+  </div>
+  <%= submit_tag "Add checkpoint!" %>
+<% end %>

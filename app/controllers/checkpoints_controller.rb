@@ -8,7 +8,14 @@ class CheckpointsController < ApplicationController
   end
 
   def create
-    redirect_to '/checkpoints'
+    checkpoint = Checkpoint.new(
+      date: Time.now,
+      description: params[:description],
+      bill_id: params[:bill_id],
+      user_id: current_user.id
+    )
+    checkpoint.save
+    redirect_to '/user_bills'
   end
 
   def show
@@ -16,7 +23,7 @@ class CheckpointsController < ApplicationController
   end
 
   def destroy
-    redirect_to '/checkpoints'
+    redirect_to '/user_bills'
   end
 
 end
