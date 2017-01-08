@@ -3,7 +3,7 @@ class BillsController < ApplicationController
 
   def index
     congress = params[:congress] || "115"
-    chamber = params[:chamber] || "senate"
+    chamber = params[:chamber] || "house"
     type = params[:type] || "introduced"
     @data = Unirest.get(
       "https://api.propublica.org/congress/v1/#{congress}/#{chamber}/bills/#{type}.json",
@@ -11,10 +11,6 @@ class BillsController < ApplicationController
     ).body
     @bills = @data["results"][0]["bills"]
     render 'index.html.erb'
-  end
-
-  def new
-    render 'new.html.erb'
   end
 
   def show
