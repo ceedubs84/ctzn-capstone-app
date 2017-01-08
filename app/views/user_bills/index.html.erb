@@ -2,7 +2,8 @@
 
 <% @user_bills.each do |user_bill| %>
   <div>
-    <h3>Bill URI: <%= user_bill.bill_uri %></h3>
+    <h4><%= user_bill.bill %></h4>
+    <h4><%= user_bill.title %></h4>
     <div> 
       <%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %>
     </div>
