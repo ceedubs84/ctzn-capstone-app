@@ -1,9 +1,18 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
 
 <h2>Bill Detail</h2>
-<bold><%= @user_bill["bill"] %></bold>
+<p><bold><%= @user_bill["bill"] %></bold></p>
 <div><em><%= @user_bill["title"] %></em></div>
 <div>Sponsor: <%= @user_bill["sponsor"] %></div>
+<div>Introduced: <%= @user_bill["introduced_date"] %></div>
+<div>Cosponsors: <%= @user_bill["cosponsors"] %></div>
+<div>Committees: <%= @user_bill["committees"] %></div>
+<div>Latest Major Action Date: <%= @user_bill["latest_major_action_date"] %></div>
+<div>Latest Major Action: <%= @user_bill["latest_major_action"] %></div>
+<div>House Passage Vote: <%= @user_bill["house_passage_vote"] %></div>
+<div>Senate Passage Vote: <%= @user_bill["senate_passage_vote"] %></div>
+<div>Versions: <%= @user_bill["versions"] %></div>
+
 <div><a href="<%= @user_bill["gpo_pdf_uri"] %>">Link to Full Bill PDF</a></div>
 
 
