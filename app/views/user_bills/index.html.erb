@@ -2,11 +2,12 @@
 
 <% @user_bills.each do |user_bill| %>
   <div>
-    <h4><%= user_bill.bill %></h4>
+    <a href="/user_bills/<%= (user_bill.bill_uri).gsub('/', '-') %>"><%= user_bill.bill %></a>
     <h4><%= user_bill.title %></h4>
     <div> 
       <%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %>
     </div>
+    <div>------------------------------------------------</div>
   </div>
 <% end %>
 
