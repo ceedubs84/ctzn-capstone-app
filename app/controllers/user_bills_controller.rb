@@ -10,7 +10,9 @@ class UserBillsController < ApplicationController
     user_bill = UserBill.new(
       user_id: current_user.id,
       bill_uri: params[:bill_uri],
-      vote: 0
+      vote: 0,
+      bill: params[:bill],
+      title: params[:title]
     )
     user_bill.save!
     redirect_to "/user_bills"
