@@ -18,6 +18,10 @@ class UserBillsController < ApplicationController
     redirect_to "/user_bills"
   end
 
+  def show
+    render 'show.html.erb'  
+  end
+
   def destroy
     user_bill = UserBill.find_by(id: params[:id])
     user_bill.destroy
