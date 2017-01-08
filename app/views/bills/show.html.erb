@@ -5,6 +5,14 @@
 <bold><%= @bill["bill"] %></bold>
 <div><em><%= @bill["title"] %></em></div>
 <div>Sponsor: <%= @bill["sponsor"] %></div>
+<div>Introduced: <%= @bill["introduced_date"] %></div>
+<div>Cosponsors: <%= @bill["cosponsors"] %></div>
+<div>Committees: <%= @bill["committees"] %></div>
+<div>Latest Major Action Date: <%= @bill["latest_major_action_date"] %></div>
+<div>Latest Major Action: <%= @bill["latest_major_action"] %></div>
+<div>House Passage Vote: <%= @bill["house_passage_vote"] %></div>
+<div>Senate Passage Vote: <%= @bill["senate_passage_vote"] %></div>
+<div>Versions: <%= @bill["versions"] %></div>
 <div><a href="<%= @bill["gpo_pdf_uri"] %>">Link to Full Bill PDF</a></div>
 
 <%= form_tag "/user_bills", method: :post do %>
