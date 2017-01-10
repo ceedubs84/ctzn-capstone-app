@@ -3,7 +3,7 @@ class BillsController < ApplicationController
 
   def index
     congress = params[:congress] || "115"
-    chamber = params[:chamber] || "house"
+    chamber = params[:chamber] || "senate"
     type = params[:type] || "introduced"
     @data = Unirest.get(
       "https://api.propublica.org/congress/v1/#{congress}/#{chamber}/bills/#{type}.json",
