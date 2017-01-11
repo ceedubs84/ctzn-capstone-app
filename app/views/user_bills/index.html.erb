@@ -2,8 +2,8 @@
 
 <% @user_bills.each do |user_bill| %>
   <div>
-    <a href="/user_bills/<%= (user_bill.bill_uri).gsub('/', '-') %>"><%= user_bill.bill %></a>
-    <h4><%= user_bill.title %></h4>
+    <p><%= user_bill.bill %></p>
+    <p><%= user_bill.title %></p>
     <div> 
       <%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %>
     </div>
@@ -94,11 +94,11 @@
                 </tr>
               </thead>
               <% @user_bills.each do |user_bill| %>
-                @userbill_detail = Unirest.get(user_bill.bill_uri).body
+                <% @userbill_detail = Unirest.get(user_bill.bill_uri).body %>
                 <tbody>
                   <tr>
                     <td>
-                      <p><a href="/user_bills/<%= (user_bill.bill_uri).gsub('/', '-') %>"><%= @userbill_detail["results"][0]["bill"] %></a></p>
+                      <p><%= @userbill_detail["results"][0]["bill"] %></p>
                     </td>
                     <td>
                       <p><%= @userbill_detail["results"][0]["title"] %></p>
