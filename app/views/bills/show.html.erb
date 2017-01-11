@@ -31,3 +31,65 @@
 
 <a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Back to Search</a>
 
+<!-- Begin Table Search v2 -->
+
+  <div class="table-search-v2 margin-bottom-30">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Bill Number</th>
+            <th class="hidden-sm">Title</th>
+            <th>Introduced Date</th>
+            <th>Latest Major Action</th>
+            <th>Latest Major Action Date</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>
+              <div class="user-names">
+                <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= @bill["bill"] %></a></span>
+              </div>
+            </td>
+            <td class="td-width">
+              <p><%= @bill["title"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["sponsor"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["introduced_date"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["cosponsors"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["committees"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["latest_major_action_date"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["latest_major_action"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["house_passage_vote"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["senate_passage_vote"] %></p>
+            </td>
+            <td>
+              <p><%= @bill["versions"] %></p>
+            </td>
+            <td>
+              <p><a href="<%= @bill["gpo_pdf_uri"] %>">Link to Full Bill PDF</a></p>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+<!-- End Table Search v2 -->
