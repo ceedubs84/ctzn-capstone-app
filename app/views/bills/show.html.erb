@@ -40,9 +40,16 @@
           <tr>
             <th>Bill Number</th>
             <th class="hidden-sm">Title</th>
+            <th>Sponsor</th>
             <th>Introduced Date</th>
-            <th>Latest Major Action</th>
+            <th>Cosponsors</th>
+            <th>Committees</th>
             <th>Latest Major Action Date</th>
+            <th>Latest Major Action</th>
+            <th>House Passage Vote</th>
+            <th>Senate Passage Vote</th>
+            <th>Versions</th>
+            <th>PDF</th>
           </tr>
         </thead>
         
@@ -50,7 +57,7 @@
           <tr>
             <td>
               <div class="user-names">
-                <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= @bill["bill"] %></a></span>
+                <span><a href="/bills/<%= (@bill["bill_uri"]).gsub('/', '-') %>"><%= @bill["bill"] %></a></span>
               </div>
             </td>
             <td class="td-width">
