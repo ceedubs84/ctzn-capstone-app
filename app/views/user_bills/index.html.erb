@@ -75,7 +75,8 @@
                       <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
                     </td>
                     <td>
-                      <p><%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %></p>
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"><% link_to "Delete", "/user_bills/#{user_bill.id}", method: :delete %></span>
+                      
                     </td>
                   </tr>
                 </tbody>
