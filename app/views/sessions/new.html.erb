@@ -16,94 +16,92 @@
     <div class="container content-md">
       <div class="margin-bottom-60 head">
         <h1>Login or Register an Account</h1>
-        <p>Welcome to CTZN! Please Login to take action, or please Register to create a new accoutn and get started today!</p>
+        <p>Welcome to CTZN! Please Login to take action, or please Sign Up to create a new accoutn and get started today!</p>
       </div>
 
       <div class="row space-xlg-hor equal-height-columns">
         <!--login Block-->
-        <div class="form-block login-block col-md-6 col-sm-12 rounded-left equal-height-column">
-          <div class="form-block-header">
-            <h2 class="margin-bottom-15">Sign In</h2>
-          </div>
+        <%= form_tag '/login', method: :post do %>
+          <div class="form-block login-block col-md-6 col-sm-12 rounded-left equal-height-column">
+            <div class="form-block-header">
+              <h2 class="margin-bottom-15">Sign In</h2>
+            </div>
 
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-user color-white"></i></span>
-            <input type="text" class="form-control rounded-right" placeholder="Email">
-          </div>
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-user color-white"></i></span>
+              <input type="email" class="form-control rounded-right" placeholder="Email">
+            </div>
 
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-lock color-white"></i></span>
-            <input type="password" class="form-control rounded-right" placeholder="Password">
-          </div>
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-lock color-white"></i></span>
+              <input type="password" class="form-control rounded-right" placeholder="Password">
+            </div>
 
-          <div class="row margin-bottom-70">
-            <div class="col-md-12">
-              <button type="submit" class="btn-u btn-block rounded">Sign In</button>
+            <div class="row margin-bottom-70">
+              <div class="col-md-12">
+                <button type="submit" class="btn-u btn-block rounded">Sign In</button>
+              </div>
+            </div>
+            <div class="social-login">
+              <div class="or rounded-x">Or</div>
+              <ul class="list-unstyled">
+                <li>
+                  <button class="btn rounded btn-block btn-lg btn-facebook-inversed margin-bottom-20">
+                    <i class="fa fa-facebook"></i> Sign in with Facebook
+                  </button>
+                </li>
+                <li>
+                  <button class="btn rounded btn-block btn-lg btn-twitter-inversed">
+                    <i class="fa fa-twitter"></i> Sign in with Twitter
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="social-login">
-            <div class="or rounded-x">Or</div>
-            <ul class="list-unstyled">
-              <li>
-                <button class="btn rounded btn-block btn-lg btn-facebook-inversed margin-bottom-20">
-                  <i class="fa fa-facebook"></i> Sign in with Facebook
-                </button>
-              </li>
-              <li>
-                <button class="btn rounded btn-block btn-lg btn-twitter-inversed">
-                  <i class="fa fa-twitter"></i> Sign in with Twitter
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <% end %>
         <!--End login Block-->
 
         <!--Reg Block-->
-        <div class="form-block reg-block col-md-6 col-sm-12 rounded-right equal-height-column">
-          <div class="form-block-header">
-            <h2 class="margin-bottom-10">Sign Up</h2>
-            <p class="margin-bottom-20">Please create a new account in order to start taking action!</p>
-          </div>
-
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-envelope"></i></span>
-            <input type="email" class="form-control rounded-right" placeholder="Email">
-          </div>
-
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-            <input type="text" class="form-control rounded-right" placeholder="First name">
-          </div>
-
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-            <input type="text" class="form-control rounded-right" placeholder="Loginast name">
-          </div>
-
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-lock"></i></span>
-            <input type="password" class="form-control rounded-right" placeholder="Password">
-          </div>
-
-          <div class="checkbox margin-bottom-15">
-            <label>
-              <input type="checkbox">
-              <p>I agree to terms &amp; conditions</p>
-            </label>
-
-            <label>
-              <input type="checkbox">
-              <p>Subscribe to our newsletter</p>
-            </label>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <button type="submit" class="btn-u btn-block rounded">Continue</button>
+        <%= form_tag '/users', method: :post do  %>
+          <div class="form-block reg-block col-md-6 col-sm-12 rounded-right equal-height-column">
+            <div class="form-block-header">
+              <h2 class="margin-bottom-10">Sign Up</h2>
+              <p class="margin-bottom-20">Please create a new account in order to start taking action!</p>
             </div>
+
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+              <input type="text" class="form-control rounded-right" placeholder="First name">
+            </div>
+
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+              <input type="text" class="form-control rounded-right" placeholder="Last name">
+            </div>
+
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-envelope"></i></span>
+              <input type="email" class="form-control rounded-right" placeholder="Email">
+            </div>
+
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-lock"></i></span>
+              <input type="password" class="form-control rounded-right" placeholder="Password">
+            </div>
+
+            <div class="input-group margin-bottom-20">
+              <span class="input-group-addon rounded-left"><i class="icon-lock"></i></span>
+              <input type="password" class="form-control rounded-right" placeholder="Password Confirmation">
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <button type="submit" class="btn-u btn-block rounded">Continue</button>
+              </div>
+            </div>
+
           </div>
-        </div>
+        <% end %>
         <!--End Reg Block-->
       </div>
     </div><!--/container-->
