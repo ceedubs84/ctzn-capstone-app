@@ -17,8 +17,9 @@ class CheckpointsController < ApplicationController
       flash[:success] = 'Successfully created!'
       redirect_to '/checkpoint_actions/new'
     else
-      flash[:success] = 'Welcome! You successfully logged in!'
+      flash[:warning] = 'Checkpoint not saved, please try again.'
       redirect_to '/checkpoints/new'
+    end
   end
 
   def show

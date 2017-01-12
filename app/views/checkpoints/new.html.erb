@@ -1,6 +1,7 @@
 <h3>Create a New Action for this Legislation</h3>
 
 <%= form_tag '/checkpoints', method: :post do %>
+
   <div class="input-group margin-bottom-20">
     <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
     <input type="string" name="date" class="form-control rounded-right" placeholder="Due Date">
@@ -8,12 +9,13 @@
 
   <div class="input-group margin-bottom-20">
     <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-    <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
+    <input type="text" name="userbill_id" class="form-control rounded-right" placeholder="Add UserBill_ID routing here">
   </div>
 
-  <div class="input-group margin-bottom-20">
-    <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-    <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn-u btn-block rounded">Create</button>
+    </div>
   </div>
-  
+
 <% end %>
