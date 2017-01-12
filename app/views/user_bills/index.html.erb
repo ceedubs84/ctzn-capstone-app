@@ -1,18 +1,5 @@
 <h2><%= current_user.first_name %>'s Billz!</h2>
 
-<% @user_bills.each do |user_bill| %>
-  <div>
-    <p><%= user_bill.bill %></p>
-    <p><%= user_bill.title %></p>
-    <div> 
-      <%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %>
-    </div>
-  </div>
-<% end %>
-
-<a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Search Bills</a>
-<a href="/logout">Log out!</a>
-
 <body>
   <div class="wrapper">
 
@@ -21,8 +8,7 @@
       <div class="row">
         <!--Left Sidebar-->
         <div class="col-md-3 md-margin-bottom-40">
-          <img class="img-responsive profile-img margin-bottom-20" src="/assets/img/team/img32-md.jpg" alt="">
-
+          <img class="img-responsive profile-img margin-bottom-20" src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" alt="">
           <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
             <li class="list-group-item active">
               <a href="page_profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
@@ -90,27 +76,30 @@
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
                   <th style="width: 100px;">Latest Major Action Date</th>
-                  <th>Contacts</th>
+                  <th>Delete?</th>
                 </tr>
               </thead>
               <% @user_bills.each do |user_bill| %>
-                <% @userbill_detail = Unirest.get(user_bill.bill_uri).body %>
+                <% userbill_detail = Unirest.get(user_bill.bill_uri, headers: { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }).body %>
                 <tbody>
                   <tr>
                     <td>
-                      <p><%= @userbill_detail["results"][0]["bill"] %></p>
+                      <p><%= userbill_detail["results"][0]["bill"] %></p>
                     </td>
                     <td>
-                      <p><%= @userbill_detail["results"][0]["title"] %></p>
+                      <p><%= userbill_detail["results"][0]["title"] %></p>
                     </td>
                     <td>
-                      <p><%= @userbill_detail["results"][0]["introduced_date"] %></p>
+                      <p><%= userbill_detail["results"][0]["introduced_date"] %></p>
                     </td>
                     <td>
-                      <p><%= @userbill_detail["results"][0]["latest_major_action"] %></p>
+                      <p><%= userbill_detail["results"][0]["latest_major_action"] %></p>
                     </td>
                     <td>
-                      <p><%= @userbill_detail["results"][0]["latest_major_action_date"] %></p>
+                      <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
+                    </td>
+                    <td>
+                      <p><%= link_to "Remove Bill", "/user_bills/#{user_bill.id}", method: :delete %></p>
                     </td>
                   </tr>
                 </tbody>
@@ -119,11 +108,11 @@
           </div>
         </div>
             <!--End Table Search v1-->
-          </div>
         </div>
-        <!-- End Profile Content -->
-      </div>
-    </div><!--/container-->
+    </div>
+      <!-- End Profile Content -->
+  </div>
+  </div><!--/container-->
     <!--=== End Profile ===-->
 
   </div><!--/wrapper-->
@@ -235,3 +224,6 @@
   <script src="/assets/plugins/placeholder-IE-fixes.js"></script>
   <![endif]-->
 </body>
+
+<a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Search Bills</a>
+<a href="/logout">Log out!</a>
