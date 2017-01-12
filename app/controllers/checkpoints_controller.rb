@@ -18,7 +18,7 @@ class CheckpointsController < ApplicationController
       redirect_to '/checkpoint_actions/new'
     else
       flash[:success] = 'Welcome! You successfully logged in!'
-      redirect_to '/chckponits/new'
+      redirect_to '/checkpoints/new'
   end
 
   def show
