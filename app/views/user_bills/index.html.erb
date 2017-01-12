@@ -52,6 +52,7 @@
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
                   <th style="width: 100px;">Latest Major Action Date</th>
+                  <th>Checkpoint Actions</th>
                   <th>Delete?</th>
                 </tr>
               </thead>
@@ -73,6 +74,9 @@
                     </td>
                     <td>
                       <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
+                    </td>
+                    <td>
+                      <p>Create New Action</p>
                     </td>
                     <td>
                       <span class="glyphicon glyphicon-trash" aria-hidden="true"><% link_to "Delete", "/user_bills/#{user_bill.id}", method: :delete %></span>

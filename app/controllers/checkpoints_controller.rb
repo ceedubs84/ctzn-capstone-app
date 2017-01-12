@@ -9,7 +9,7 @@ class CheckpointsController < ApplicationController
 
   def create
     checkpoint = Checkpoint.new(
-      date: Time.now,
+      date: params[:date] || Time.now,
       description: params[:description],
       bill_id: params[:bill_id],
       user_id: current_user.id

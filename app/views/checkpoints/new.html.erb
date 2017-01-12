@@ -1,15 +1,19 @@
+<h3>Create a New Action for this Legislation</h3>
+
 <%= form_tag '/checkpoints', method: :post do %>
-  <div>
-    <%= label_tag :date %>
-    <%= text_field_tag :date, Time.now %>
+  <div class="input-group margin-bottom-20">
+    <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
+    <input type="string" name="date" class="form-control rounded-right" placeholder="Due Date">
   </div>
-  <div>
-    <%= label_tag :description %>
-    <%= text_field_tag :description, "Description" %>
+
+  <div class="input-group margin-bottom-20">
+    <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+    <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
   </div>
-  <div>
-    <%= label_tag :bill_id %>
-    <%= text_field_tag :bill_id, "" %>
+
+  <div class="input-group margin-bottom-20">
+    <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+    <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
   </div>
-  <%= submit_tag "Add checkpoint!" %>
+  
 <% end %>
