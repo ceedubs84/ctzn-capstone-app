@@ -84,7 +84,7 @@
                 <tbody>
                   <tr>
                     <td>
-                      <p><%= userbill_detail["results"][0]["bill"] %></p>
+                      <span><a href="/user_bills/<%= (user_bill.bill_uri).gsub('/', '-') %>"><%= userbill_detail["results"][0]["bill"] %></a></span>
                     </td>
                     <td>
                       <p><%= userbill_detail["results"][0]["title"] %></p>
@@ -225,5 +225,9 @@
   <![endif]-->
 </body>
 
-<a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Search Bills</a>
-<a href="/logout">Log out!</a>
+<div>
+  <a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Search Bills</a>
+</div>
+<div>
+  <a href="/logout">Log out!</a>
+</div>
