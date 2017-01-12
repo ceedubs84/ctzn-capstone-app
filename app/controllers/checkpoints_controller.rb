@@ -15,9 +15,10 @@ class CheckpointsController < ApplicationController
     )
     if checkpoint.save
       flash[:success] = 'Successfully created!'
-      redirect_to '/user_bills'
+      redirect_to '/checkpoint_actions/new'
     else
       flash[:success] = 'Welcome! You successfully logged in!'
+      redirect_to '/chckponits/new'
   end
 
   def show
@@ -25,7 +26,10 @@ class CheckpointsController < ApplicationController
   end
 
   def destroy
-    redirect_to '/user_bills'
+    checkpoint = Checkpoint.find_by(id: params[:id])
+    checkpoint.destroy
+    flash[:success] = "Bill Removed Successfully!"
+    redirect_to "/user_bills"
   end
 
 end
