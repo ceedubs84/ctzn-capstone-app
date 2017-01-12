@@ -11,9 +11,14 @@ Rails.application.routes.draw do
 
   get '/checkpoints' => 'checkpoints#index'
   get '/checkpoints/new' => 'checkpoints#new'
-  post '/checkpoints/' => 'checkpoints#create'
+  post '/checkpoints' => 'checkpoints#create'
   get '/checkpoints/:id' => 'checkpoints#show'
   delete '/checkpoints/:id' => 'checkpoints#destroy'
+
+  get '/checkpoint_actions/new' => 'checkpoint_actions#new'
+  post '/checkpoint_actions' => 'checkpoint_actions#create'
+  get '/checkpoint_actions/:id' => 'checkpoint_actions#show'
+  delete '/checkpoint_actions/:id' => 'checkpoint_actions#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
