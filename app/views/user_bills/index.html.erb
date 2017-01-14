@@ -76,11 +76,11 @@
                       <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
                     </td>
                     <td>
-                      <p>Create New Action</p>
+                      <a href="/checkpoints/new"><i class="fa fa-plus-square-o fa-2x"></i>
                     </td>
                     <td>
                       <%= link_to "/user_bills/#{user_bill.id}", method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
-                        <i class="glyphicon glyphicon-trash"></i>
+                        <i class="fa fa-trash fa-2x"></i>
                       <% end %>
                     </td>
                   </tr>
