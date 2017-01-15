@@ -1,4 +1,4 @@
-<h3>Add Actions to the Checkpoint</h3>
+<h3>Add New Actions</h3>
 <div>
   <%= form_tag '/checkpoint_actions', method: :post do %>
 
@@ -19,11 +19,16 @@
     <div class="input-group margin-bottom-20">
       <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
       <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
-    </div>  
+    </div>
+
+    <div class="input-group margin-bottom-20">
+      <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
+      <input type="date" name="date" class="form-control rounded-right" placeholder="Due Date">
+    </div>
 
     <div class="input-group margin-bottom-20">
       <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-      <input type="number" name="checkpoint_id" class="form-control rounded-right" placeholder= "params[:checkpoint_id]">
+      <input type="number" name="user_bill_id" class="form-control rounded-right" placeholder= "params[:user_bill_id]">
     </div>
 
     <div class="row">

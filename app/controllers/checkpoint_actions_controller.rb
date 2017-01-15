@@ -19,10 +19,11 @@ class CheckpointActionsController < ApplicationController
     )
     if checkpoint_action.save
       flash[:success] = 'Successfully created!'
-      redirect_to "/checkpoint_actions/index"
+      redirect_to "/checkpoint_actions"
     else
       flash[:warning] = 'Action not saved, please try again.'
       redirect_to '/checkpoint_actions/new'
+    end
   end
 
   def show
