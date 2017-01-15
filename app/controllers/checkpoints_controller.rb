@@ -1,5 +1,6 @@
 class CheckpointsController < ApplicationController
   def index
+    @checkpoints = Checkpoint.all
     render 'index.html.erb'
   end
 
