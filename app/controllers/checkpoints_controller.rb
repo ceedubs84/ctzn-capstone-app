@@ -9,13 +9,13 @@ class CheckpointsController < ApplicationController
 
   def create
     checkpoint = Checkpoint.new(
-      date: params[:date] || Time.now,
-      bill_id: params[:bill_id],
+      date: params[:date],
+      user_bill_id: params[:user_bill_id],
       user_id: current_user.id
     )
     if checkpoint.save
       flash[:success] = 'Successfully created!'
-      redirect_to '/checkpoint_actions/new'
+      redirect_to "/checkpoint_actions/new?checkpoint_id=#{checkpoint.id}"
     else
       flash[:warning] = 'Checkpoint not saved, please try again.'
       redirect_to '/checkpoints/new'
