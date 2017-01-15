@@ -1,1 +1,36 @@
-new.html.erb
+<p>New Checkpoint Action</p>
+<div>
+  <%= form_tag '/checkpoint_actions', method: :post do %>
+
+    <div>
+      <input list="actions" name="action_id">
+      <datalist id="action_id">
+        <option value="1">Call
+        <option value="2">Write
+        <option value="3">Email
+        <option value="4">Attend
+        <option value="5">Register
+        <option value="6">Volunteer
+        <option value="7">Organize
+        <option value="8">Vote
+      </datalist>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+      <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+      <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
+    </div>  
+
+    <div class="input-group margin-bottom-20">
+      <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+      <input type="number" name="checkpoint_id" class="form-control rounded-right" placeholder= "params[:checkpoint_id]">
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn-u btn-block rounded">Create</button>
+      </div>
+    </div>
+
+  <% end %>
+</div>
