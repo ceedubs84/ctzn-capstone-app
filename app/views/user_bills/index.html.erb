@@ -76,7 +76,7 @@
                       <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
                     </td>
                     <td>
-                      <a href="/checkpoints/new"><i class="fa fa-plus-square-o fa-2x"></i>
+                      <a href="/checkpoints/new?user_bill_id=<%= user_bill.id %>"><i class="fa fa-plus-square-o fa-2x"></i>
                     </td>
                     <td>
                       <%= link_to "/user_bills/#{user_bill.id}", method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
