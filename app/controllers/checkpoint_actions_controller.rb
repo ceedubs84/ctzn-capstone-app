@@ -1,5 +1,6 @@
 class CheckpointActionsController < ApplicationController
   def index
+    @checkpoint_actions = CheckpointAction.all
     render 'index.html.erb'
   end
 
@@ -9,16 +10,24 @@ class CheckpointActionsController < ApplicationController
 
   def create
     checkpoint_action = CheckpointAction.new(
-      checkpoint_id: params[:checkpoint_id],
       action_id: params[:action_id],
       description: params[:description],
+      date: params[:date],
+      user_bill_id: params[:user_bill_id],
+      user_id: current_user.id,
       status: "Incomplete"
     )
-    checkpoint_action.save
-    redirect_to "/user_bills"
+    if checkpoint_action.save
+      flash[:success] = 'Successfully created!'
+      redirect_to "/checkpoint_actions"
+    else
+      flash[:warning] = 'Action not saved, please try again.'
+      redirect_to '/checkpoint_actions/new'
+    end
   end
 
   def show
+    @checkpoint_action = CheckpointAction.find_by(id: params[:id])
     render 'show.html.erb'
   end
 
