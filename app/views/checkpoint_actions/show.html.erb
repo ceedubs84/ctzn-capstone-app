@@ -2,11 +2,9 @@
 <a href="/user_bills">See <bold>your</bold> bills</a>
 
 <h3>Actions Index</h3>
-<% @checkpoint_actions.each do |checkpoint_action| %>
-  <h4><%= checkpoint_action.description %></h4>
-  <p>Due Date:<%= checkpoint_action.date %></p>
-  <p><%= checkpoint_action.status %></p>
-<% end %>
+  <h4><%= @checkpoint_action.description %></h4>
+  <p>Due Date: <%= @checkpoint_action.date %></p>
+  <p><%= @checkpoint_action.status %></p>
 
 <div>
   <a href="/bills"><img src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" id="bill-img">Search Bills</a>
