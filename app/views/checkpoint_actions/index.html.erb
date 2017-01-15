@@ -4,6 +4,7 @@
 <h3>Actions Index</h3>
 <% @checkpoint_actions.each do |checkpoint_action| %>
   <h4><%= checkpoint_action.description %></h4>
+  <p>Due Date:<%= checkpoint_action.date %></p>
   <p><%= checkpoint_action.status %></p>
 <% end %>
 
