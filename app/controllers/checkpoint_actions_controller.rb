@@ -27,6 +27,7 @@ class CheckpointActionsController < ApplicationController
   end
 
   def show
+    @checkpoint_action = CheckpointAction.find_by(id: params[:id])
     render 'show.html.erb'
   end
 
