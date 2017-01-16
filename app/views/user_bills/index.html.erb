@@ -52,7 +52,7 @@
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
                   <th style="width: 100px;">Latest Major Action Date</th>
-                  <th>Checkpoint Actions</th>
+                  <th>Add/See Actions</th>
                   <th>Delete?</th>
                 </tr>
               </thead>
@@ -76,6 +76,7 @@
                       <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
                     </td>
                     <td>
+                      <a href="/checkpoint_actions/<%= params[:id] %>"><i class="fa fa-eye fa-2x"></i><br>
                       <a href="/checkpoint_actions/new?user_bill_id=<%= user_bill.id %>"><i class="fa fa-plus-square-o fa-2x"></i>
                     </td>
                     <td>
