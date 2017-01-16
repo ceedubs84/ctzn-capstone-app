@@ -16,7 +16,7 @@
       <% @checkpoint_actions.each do |checkpoint_action| %>
         <tbody>
           <tr>
-            <td>Biil#</td>
+            <td><%= checkpoint_action.user_bill.bill %></td>
             <td><%= checkpoint_action.description %></td>
             <td><%= checkpoint_action.date %></td>
             <td><%= checkpoint_action.status %></td>
