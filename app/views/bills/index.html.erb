@@ -1,54 +1,8 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
 <a href="/user_bills">See <bold>your</bold> bills</a>
 
-<h2>Here are some Billz!</h2>
-<div ng-app="app">
-  {{ 1 + 1 }}
-</div>
-
 <div><a href="/logout">Log out!</a></div>
-<!-- Begin Table Search v2 -->
-
-  <div class="table-search-v2 margin-bottom-30">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>Bill Number</th>
-            <th class="hidden-sm">Title</th>
-            <th>Introduced Date</th>
-            <th>Latest Major Action</th>
-            <th>Latest Major Action Date</th>
-          </tr>
-        </thead>
-        <% @bills.each do |bill| %>
-          <tbody>
-            <tr>
-              <td>
-                <div class="user-names">
-                  <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a></span>
-                </div>
-              </td>
-              <td class="td-width">
-                <p><%= bill["title"] %></p>
-              </td>
-              <td>
-                <p>Introduced on <%= bill["introduced_date"] %></p>
-              </td>
-              <td>
-                <p><%= bill["latest_major_action"] %></p>
-              </td>
-              <td>
-                <p><%= bill["latest_major_action_date"] %></p>
-              </td>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
-    </div>
-  </div>
-<!-- End Table Search v2 -->
-
+<h2>Federal Legislation</h2>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <% @bills.each do |bill| %>
     <div class="panel panel-default">
