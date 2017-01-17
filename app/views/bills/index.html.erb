@@ -19,7 +19,7 @@
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Bill Number</th>
+                  <th>Sponsor</th>
                   <th class="hidden-sm">Title</th>
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
@@ -30,7 +30,7 @@
                 <tr>
                   <td>
                     <div class="user-names">
-                      <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a></span>
+                      <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["sponsor"] %></a></span>
                     </div>
                   </td>
                   <td class="td-width">
