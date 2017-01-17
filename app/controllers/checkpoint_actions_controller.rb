@@ -18,7 +18,7 @@ class CheckpointActionsController < ApplicationController
       status: "Incomplete"
     )
     if checkpoint_action.save
-      flash[:success] = 'Successfully created!'
+      flash[:success] = 'Action created successfully!'
       redirect_to "/checkpoint_actions"
     else
       flash[:warning] = 'Action not saved, please try again.'
