@@ -2,53 +2,86 @@
 <a href="/user_bills">See <bold>your</bold> bills</a>
 
 <div><a href="/logout">Log out!</a></div>
-<h2>Federal Legislation</h2>
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <% @bills.each do |bill| %>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <span><b><%= bill["number"] %></b>: <%= bill["title"] %></span>
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Bill Number</th>
-                <th class="hidden-sm">Title</th>
-                <th>Introduced Date</th>
-                <th>Latest Major Action</th>
-                <th>Latest Major Action Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="user-names">
-                    <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a></span>
-                  </div>
-                </td>
-                <td class="td-width">
-                  <p><%= bill["title"] %></p>
-                </td>
-                <td>
-                  <p>Introduced on <%= bill["introduced_date"] %></p>
-                </td>
-                <td>
-                  <p><%= bill["latest_major_action"] %></p>
-                </td>
-                <td>
-                  <p><%= bill["latest_major_action_date"] %></p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+<body>
+  <h2>Federal Legislation</h2>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <% @bills.each do |bill| %>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <span><b><%= bill["number"] %></b>: <%= bill["title"] %></span>
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Bill Number</th>
+                  <th class="hidden-sm">Title</th>
+                  <th>Introduced Date</th>
+                  <th>Latest Major Action</th>
+                  <th>Latest Major Action Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="user-names">
+                      <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["number"] %></a></span>
+                    </div>
+                  </td>
+                  <td class="td-width">
+                    <p><%= bill["title"] %></p>
+                  </td>
+                  <td>
+                    <p>Introduced on <%= bill["introduced_date"] %></p>
+                  </td>
+                  <td>
+                    <p><%= bill["latest_major_action"] %></p>
+                  </td>
+                  <td>
+                    <p><%= bill["latest_major_action_date"] %></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</body>
+<!-- JS Global Compulsory -->
+  <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
+  <script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script>
+  <script type="text/javascript" src="/assets/plugins/counter/waypoints.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/counter/jquery.counterup.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  <!-- JS Page Level -->
+  <script type="text/javascript" src="/assets/js/app.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/datepicker.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      App.init();
+      App.initCounter();
+      App.initScrollBar();
+      Datepicker.initDatepicker();
+      StyleSwitcher.initStyleSwitcher();
+    });
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/assets/plugins/respond.js"></script>
+  <script src="/assets/plugins/html5shiv.js"></script>
+  <script src="/assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
