@@ -1,15 +1,15 @@
 class BillsController < ApplicationController
-  HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
+  # HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
-    congress = params[:congress] || "115"
-    chamber = params[:chamber] || "senate"
-    type = params[:type] || "introduced"
+    # congress = params[:congress] || "115"
+    # chamber = params[:chamber] || "senate"
+    # type = params[:type] || "introduced"
     @data = Unirest.get(
-      "https://api.propublica.org/congress/v1/#{congress}/#{chamber}/bills/#{type}.json",
-      headers: HEADERS
+      "https://congress.api.sunlightfoundation.com/bills?history.active=true&order=last_action_at"
     ).body
-    @bills = @data["results"][0]["bills"]
+    @bills = @data["results"]
+    # @congresspeople = Sunlight::Legislator.all_for(:address => "2239 N Western Ave Chicago, IL 60647")
     render 'index.html.erb'
   end
 

@@ -7,14 +7,14 @@
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <% @bills.each do |bill| %>
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
+        <div class="panel-heading" role="tab" id="heading<%= bill['bill_id'] %>">
           <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <span><b><%= bill["number"] %></b>: <%= bill["title"] %></span>
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="true" aria-controls="collapse<%= bill['bill_id'] %>">
+              <span><b><%= bill["bill_id"] %></b>: <%= bill["official_title"] %></span>
             </a>
           </h4>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div id="collapse<%= bill['bill_id'] %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= bill['bill_id'] %>">
           <div class="panel-body">
             <table class="table table-bordered table-striped">
               <thead>
@@ -30,11 +30,11 @@
                 <tr>
                   <td>
                     <div class="user-names">
-                      <span><a href="/bills/<%= (bill["bill_uri"]).gsub('/', '-') %>"><%= bill["sponsor"] %></a></span>
+                      <p><%= bill["sponsor"]["title"] %> <%= bill["sponsor"]["first_name"] %> <%= bill["sponsor"]["last_name"] %></p>
                     </div>
                   </td>
                   <td class="td-width">
-                    <p><%= bill["title"] %></p>
+                    <p><%= bill["official_title"] %></p>
                   </td>
                   <td>
                     <p>Introduced on <%= bill["introduced_date"] %></p>
