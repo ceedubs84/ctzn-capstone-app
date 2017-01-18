@@ -13,8 +13,13 @@ class UserBillsController < ApplicationController
       vote: 0,
       official_title: params[:official_title]
     )
-    user_bill.save!
-    redirect_to "/user_bills"
+    if user_bill.save!
+      flash[:success] = 'Added successfully!'
+      redirect_to "/user_bills"
+    else
+      flash[:warning] = 'Bill not saved, please try again.'
+      redirect_to '/bills'
+    end
   end
 
   def show
