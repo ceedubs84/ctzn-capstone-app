@@ -10,7 +10,7 @@
         <div class="panel-heading" role="tab" id="heading<%= bill['bill_id'] %>">
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="true" aria-controls="collapse<%= bill['bill_id'] %>">
-              <span><b><%= bill["bill_id"] %></b>: <%= bill["official_title"] %></span>
+              <span><b><%= bill["bill_id"].upcase %></b>: <%= bill["official_title"] %></span>
             </a>
           </h4>
         </div>
@@ -22,6 +22,7 @@
                   <th>Congress</th>
                   <th>Bill ID</th>
                   <th>Sponsor</th>
+                  <th># of Cosponsors</th>
                   <th class="hidden-sm">Title</th>
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
@@ -39,6 +40,9 @@
                     <div class="user-names">
                       <p><%= bill["sponsor"]["title"] %> <%= bill["sponsor"]["first_name"] %> <%= bill["sponsor"]["last_name"] %></p>
                     </div>
+                  </td>
+                  <td>
+                    <p><%= bill["cosponsors_count"] %></p>
                   </td>
                   <td class="td-width">
                     <p><%= bill["official_title"] %></p>
