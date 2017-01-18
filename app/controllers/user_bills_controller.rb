@@ -8,7 +8,7 @@ class UserBillsController < ApplicationController
 
   def create
     user_bill = UserBill.new(
-      user_id: current_user.id,
+      user_id: params[:user_id],
       bill_id: params[:bill_id],
       vote: 0,
       official_title: params[:official_title]
