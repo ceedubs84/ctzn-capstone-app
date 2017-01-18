@@ -45,42 +45,57 @@
         <div>My Federal Legislation</div>
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <% @user_bills.each do |user_bill| %>
-              <% userbill_detail = Unirest.get(user_bill.bill_uri, headers: { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }).body %>
+              <% userbill_detail = Unirest.get("https://congress.api.sunlightfoundation.com/bills?bill_id=#{user_bill.bill_id}").body %>
+              <% userbill_detail["results"].each do |result| %>
               <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading<%= user_bill['bill_id'] %>">
+                <div class="panel-heading" role="tab" id="heading<%= user_bill.bill_id %>">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= user_bill['bill_id'] %>" aria-expanded="true" aria-controls="collapseOne" >
-                      <p><b><%= userbill_detail["results"][0]["bill"] %></b>: <%= userbill_detail["results"][0]["title"] %></p>
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= user_bill.bill_id %>" aria-expanded="true" aria-controls="collapse<%= user_bill.bill_id %>" >
+                      <p><b><%= result["bill_id"].upcase %></b>: <%= result["official_title"] %></p>
                     </a>
                   </h4>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div id="collapse<%= user_bill.bill_id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= user_bill.bill_id %>">
                   <div class="panel-body">
                     <table class="table table-bordered table-striped">
                       <thead>
                         <tr>
+                          <th>Congress</th>
+                          <th>Bill ID</th>
+                          <th>Sponsor</th>
+                          <th># of Cosponsors</th>
                           <th class="hidden-sm">Title</th>
                           <th>Introduced Date</th>
                           <th>Latest Major Action</th>
-                          <th style="width: 100px;">Latest Major Action Date</th>
                           <th>Add/See Actions</th>
                           <th>Delete?</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
+                          <td>
+                            <p><%= result["congress"] %></p>
+                          </td>
+                          <td>
+                            <p><%= result["bill_id"].upcase %></p>
+                          </td>
+                          <td>
+                            <div class="user-names">
+                              <p><%= result["sponsor"]["title"] %> <%= result["sponsor"]["first_name"] %> <%= result["sponsor"]["last_name"] %></p>
+                            </div>
+                          </td>
+                          <td>
+                            <p><%= result["cosponsors_count"] %></p>
+                          </td>
                           <td class="td-width">
-                            <p><%= userbill_detail["results"][0]["title"] %></p>
+                            <p><%= result["official_title"] %></p>
                           </td>
                           <td>
-                            <p><%= userbill_detail["results"][0]["introduced_date"] %></p>
+                            <p>Introduced on <%= result["introduced_on"] %></p>
                           </td>
                           <td>
-                            <p><%= userbill_detail["results"][0]["latest_major_action"] %></p>
-                          </td>
-                          <td>
-                            <p><%= userbill_detail["results"][0]["latest_major_action_date"] %></p>
-                          </td>
+                            <p><%= result["last_action_at"] %></p>
+                          </td>                 
                           <td>
                             <a href="/checkpoint_actions/<%= params[:id] %>"><i class="fa fa-eye fa-2x"></i><br>
                             <a href="/checkpoint_actions/new?user_bill_id=<%= user_bill.id %>"><i class="fa fa-plus-square-o fa-2x"></i>
@@ -96,6 +111,7 @@
                   </div>
                 </div>
               </div>
+              <% end %>
             <% end %>
           </div>
         </div>
