@@ -32,13 +32,13 @@
                 <span><a href="/bills/<%= (@bill["bill_uri"]).gsub('/', '-') %>"><%= @bill["bill"] %></a></span>
                 <%= form_tag "/user_bills", method: :post do %>
                   <div>
-                    <%= hidden_field_tag :bill_uri, @bill["bill_uri"] %>
+                    <%= hidden_field_tag :bill_id, @bill["bill_id"] %>
                   </div>
                   <div>
                     <%= hidden_field_tag :bill, @bill["bill"] %>
                   </div>
                   <div>
-                    <%= hidden_field_tag :title, @bill["title"] %>
+                    <%= hidden_field_tag :official_title, @bill["official_title"] %>
                   </div>
                   <%= submit_tag "Add +" %>
                 <% end %>

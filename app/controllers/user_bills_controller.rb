@@ -1,5 +1,5 @@
 class UserBillsController < ApplicationController
-  HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
+  # HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
     @user_bills = current_user.user_bills
@@ -9,10 +9,9 @@ class UserBillsController < ApplicationController
   def create
     user_bill = UserBill.new(
       user_id: current_user.id,
-      bill_uri: params[:bill_uri],
+      bill_id: params[:bill_id],
       vote: 0,
-      bill: params[:bill],
-      title: params[:title]
+      official_title: params[:official_title]
     )
     user_bill.save!
     redirect_to "/user_bills"

@@ -10,10 +10,9 @@ class BillsController < ApplicationController
   end
 
   def show
-    new_uri = (params[:id]).gsub('-', '/')
+    # new_uri = (params[:id]).gsub('-', '/')
     @datum = Unirest.get(
-      "#{new_uri}",
-      headers: HEADERS
+      "https://congress.api.sunlightfoundation.com/bills?bill_id=#{bill_id}"
     ).body
     @bill = @datum["results"][0]
     render 'show.html.erb'  
