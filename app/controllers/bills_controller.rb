@@ -2,9 +2,6 @@ class BillsController < ApplicationController
   # HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
-    # congress = params[:congress] || "115"
-    # chamber = params[:chamber] || "senate"
-    # type = params[:type] || "introduced"
     @data = Unirest.get(
       "https://congress.api.sunlightfoundation.com/bills?history.active=true&order=last_action_at"
     ).body

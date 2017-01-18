@@ -47,9 +47,9 @@
             <% @user_bills.each do |user_bill| %>
               <% userbill_detail = Unirest.get(user_bill.bill_uri, headers: { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }).body %>
               <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
+                <div class="panel-heading" role="tab" id="heading<%= user_bill['bill_id'] %>">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= user_bill['bill_id'] %>" aria-expanded="true" aria-controls="collapseOne" >
                       <p><b><%= userbill_detail["results"][0]["bill"] %></b>: <%= userbill_detail["results"][0]["title"] %></p>
                     </a>
                   </h4>
