@@ -9,7 +9,6 @@ class BillsController < ApplicationController
       "https://congress.api.sunlightfoundation.com/bills?history.active=true&order=last_action_at"
     ).body
     @bills = @data["results"]
-    # @congresspeople = Sunlight::Legislator.all_for(:address => "2239 N Western Ave Chicago, IL 60647")
     render 'index.html.erb'
   end
 
