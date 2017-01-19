@@ -29,4 +29,22 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  namespace :api do
+    namespace :v1 do
+      get '/bills' => 'bills#index'
+      get '/bills/:id' => 'bills#show'
+
+      get '/user_bills' => 'user_bills#index'
+      post '/user_bills' => 'user_bills#create'
+      get '/user_bills/:id' => 'user_bills#show'
+      delete '/user_bills/:id' => 'user_bills#destroy'
+
+      get '/checkpoint_actions' => 'checkpoint_actions#index'
+      get '/checkpoint_actions/new' => 'checkpoint_actions#new'
+      post '/checkpoint_actions' => 'checkpoint_actions#create'
+      get '/checkpoint_actions/:id' => 'checkpoint_actions#show'
+      delete '/checkpoint_actions/:id' => 'checkpoint_actions#destroy'
+    end
+  end
+
 end

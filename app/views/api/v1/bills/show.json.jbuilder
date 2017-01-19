@@ -1,0 +1,1 @@
+json.bill @bill.official_title
