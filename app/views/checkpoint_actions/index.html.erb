@@ -21,7 +21,7 @@
             <td><%= checkpoint_action.date %></td>
             <div ng-app="app">
               <div ng-controller="actionsCtrl" ng-init="setup()">
-                <td ng-click="toggleComplete('status')"><%= checkpoint_action.status %></td>
+                <td ng-click="toggleComplete(status)"><%= checkpoint_action.status %></td>
               </div>
             </div>
           </tr>
