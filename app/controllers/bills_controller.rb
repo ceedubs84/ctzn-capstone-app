@@ -18,4 +18,7 @@ class BillsController < ApplicationController
     render 'show.html.erb'  
   end
 
+  def test
+  end
+
 end

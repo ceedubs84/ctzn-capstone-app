@@ -1,4 +1,4 @@
 class UserBill < ApplicationRecord
   belongs_to :user
-  has_many :checkpoints
+  has_many :checkpoint_actions
 end
