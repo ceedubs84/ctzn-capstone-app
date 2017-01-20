@@ -6,4 +6,8 @@ class Api::V1::BillsController < ApplicationController
     @bills = @data["results"]
     render 'index.json.jbuilder'
   end
+
+  def show
+    render 'show.json.jbuilder'
+  end
 end
