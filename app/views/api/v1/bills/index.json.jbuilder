@@ -20,5 +20,7 @@ json.array! @bills.each do |bill|
   json.sponsor_id bill["sponsor_id"]
   json.urls bill["urls"]
   json.withdrawn_cosponsors_count bill["withdrawn_cosponsors_count"]
+  json.keywords bill["keywords"]
+  json.summary bill["summary"]
 
 end
