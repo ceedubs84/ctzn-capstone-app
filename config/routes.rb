@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/user_bills/:id' => 'user_bills#show', :constraints => { :id => /[^\/]+/ }
   delete '/user_bills/:id' => 'user_bills#destroy'
 
+  get '/legislators' => 'legislators#index'
+  get '/legislators/:id' => 'legislators#show'
+
   get '/checkpoints' => 'checkpoints#index'
   get '/checkpoints/new' => 'checkpoints#new'
   post '/checkpoints' => 'checkpoints#create'
@@ -44,6 +47,9 @@ Rails.application.routes.draw do
       post '/checkpoint_actions' => 'checkpoint_actions#create'
       get '/checkpoint_actions/:id' => 'checkpoint_actions#show'
       delete '/checkpoint_actions/:id' => 'checkpoint_actions#destroy'
+
+      get '/legislators' => 'legislators#index'
+      get '/legislators/:id' => 'legislators#show'
     end
   end
 
