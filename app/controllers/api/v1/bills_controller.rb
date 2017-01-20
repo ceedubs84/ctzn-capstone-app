@@ -8,6 +8,10 @@ class Api::V1::BillsController < ApplicationController
   end
 
   def show
+    @datum = Unirest.get(
+    "https://congress.api.sunlightfoundation.com/bills?bill_id=#{params[:id]}"
+    ).body
+    @bill = @datum["results"][0]
     render 'show.json.jbuilder'
   end
 end
