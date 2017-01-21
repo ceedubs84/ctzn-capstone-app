@@ -8,6 +8,10 @@ class Api::V1::LegislatorsController < ApplicationController
   end
 
   def show
+    @datum = Unirest.get(
+      "https://congress.api.sunlightfoundation.com/legislators?bioguide_id=#{params[:id]}"
+    ).body
+    @legislator = @datum["results"][0]
     render 'show.json.jbuilder'
   end
 end

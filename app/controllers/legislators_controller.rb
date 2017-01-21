@@ -6,4 +6,12 @@ class LegislatorsController < ApplicationController
     @legislators = @data["results"]
     render 'index.html.erb'
   end
+
+  def show
+    @datum = Unirest.get(
+      "https://congress.api.sunlightfoundation.com/legislators?bioguide_id=#{params[:id]}"
+    ).body
+    @legislator = @datum["results"][0]
+    render 'show.html.erb'
+  end
 end
