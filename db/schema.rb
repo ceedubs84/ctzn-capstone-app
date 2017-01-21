@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120230354) do
+ActiveRecord::Schema.define(version: 20170120235747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,43 @@ ActiveRecord::Schema.define(version: 20170120230354) do
   end
 
   create_table "legislators", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "bioguide_id"
+    t.boolean  "in_office"
+    t.string   "thomas_id"
+    t.string   "govtrack_id"
+    t.string   "crp_id"
+    t.string   "fec_ids"
+    t.string   "first_name"
+    t.string   "nickname"
+    t.string   "last_name"
+    t.string   "middle_name"
+    t.string   "name_suffix"
+    t.string   "gender"
+    t.string   "birthday"
+    t.string   "term_start"
+    t.string   "term_end"
+    t.string   "state"
+    t.string   "state_name"
+    t.string   "party"
+    t.string   "title"
+    t.string   "chamber"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "website"
+    t.string   "office"
+    t.string   "contact_form"
+    t.string   "votesmart_id"
+    t.string   "icpsr_id"
+    t.string   "senate_class"
+    t.string   "lis_id"
+    t.string   "state_rank"
+    t.string   "district"
+    t.string   "twitter_id"
+    t.string   "youtube_id"
+    t.string   "facebook_id"
+    t.string   "ocd_id"
   end
 
   create_table "user_bills", force: :cascade do |t|

@@ -1,6 +1,7 @@
 json.array! @legislators.each do |legislator|
   json.bioguide_id legislator.bioguide_id
   json.in_office legislator.in_office
+  json.thomas_id legislator.thomas_id
   json.govtrack_id legislator.govtrack_id
   json.crp_id legislator.crp_id
   json.fec_ids legislator.fec_ids
