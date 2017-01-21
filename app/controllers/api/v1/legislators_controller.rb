@@ -6,4 +6,8 @@ class Api::V1::LegislatorsController < ApplicationController
     @legislators = @data["results"]
     render 'index.json.jbuilder'
   end
+
+  def show
+    render 'show.json.jbuilder'
+  end
 end
