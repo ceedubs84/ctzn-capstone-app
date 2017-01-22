@@ -2,32 +2,32 @@
 <a href="/user_bills">See <bold>your</bold> bills</a>
 
 <!--Table Search v1-->
-<div class="table-search-v1 margin-bottom-20">
-  <div class="table-responsive">
-    <table class="table table-hover table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Bill</th>
-          <th>Action Description</th>
-          <th class="hidden-sm">Due Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <% @checkpoint_actions.each do |checkpoint_action| %>
-        <tbody>
-          <tr>
-            <td><%= checkpoint_action.user_bill_id %></td>
-            <td><%= checkpoint_action.description %></td>
-            <td><%= checkpoint_action.date %></td>
-            <div ng-app="app">
-              <div ng-controller="actionsCtrl" ng-init="setup()">
+<div ng-app="app">
+  <div ng-controller="actionsCtrl" ng-init="setup()">
+    <div class="table-search-v1 margin-bottom-20">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Bill</th>
+              <th>Action Description</th>
+              <th class="hidden-sm">Due Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <% @checkpoint_actions.each do |checkpoint_action| %>
+            <tbody>
+              <tr>
+                <td><%= checkpoint_action.user_bill_id %></td>
+                <td><%= checkpoint_action.description %></td>
+                <td><%= checkpoint_action.date %></td>
                 <td ng-click="toggleComplete(status)"><%= checkpoint_action.status %></td>
-              </div>
-            </div>
-          </tr>
-        </tbody>
-      <% end %>
-    </table>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 <!--End Table Search v1-->
