@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   delete '/user_bills/:id' => 'user_bills#destroy'
 
   get '/legislators' => 'legislators#index'
+  get '/legislators/new' => 'legislators#new'
+  post '/legislators' => 'legislators#create'
   get '/legislators/:id' => 'legislators#show'
+  delete 'legislators/:id' => 'legislators#destroy'
 
   get '/checkpoints' => 'checkpoints#index'
   get '/checkpoints/new' => 'checkpoints#new'
@@ -49,7 +52,10 @@ Rails.application.routes.draw do
       delete '/checkpoint_actions/:id' => 'checkpoint_actions#destroy'
 
       get '/legislators' => 'legislators#index'
+      get '/legislators/new' => 'legislators#new'
+      post '/legislators' => 'legislators#create'
       get '/legislators/:id' => 'legislators#show'
+      delete 'legislators/:id' => 'legislators#destroy'
     end
   end
 
