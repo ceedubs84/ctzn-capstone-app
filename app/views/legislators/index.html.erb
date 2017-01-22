@@ -1,1 +1,27 @@
-<p><%= @legislators %></p>
+<div ng-app="app">
+  <div ng-controller="actionsCtrl" ng-init="setup()">
+    Search: <input ng-model="actionsFilter" list="actions">
+    
+    <datalist id="actions">
+      <option ng-repeat="checkpointAction in checkpointActions">{{ checkpointAction.description }}</option>
+    </datalist>
+
+    <table border=1>
+      <tr>
+        <th ng-click="changeOrderAttribute('date')">Name {{ getSortIcon('date') }}</th>
+        <th ng-click="changeOrderAttribute('description')">Bio {{ getSortIcon('description') }}</th>
+      </tr>
+    </table>
+    <h4>Add Action</h4>
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
+    <div>
+      <label>ActionID: </label>
+      <input ng-model="newActionId">
+      <label>Description: </label>
+      <input ng-model="newDescription">
+      <button ng-click="addAction(newActionId, newDescription)">Add Action</button>
+    </div>
+  </div>
+</div>
