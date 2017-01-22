@@ -1,6 +1,17 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
 <a href="/user_bills">See <bold>your</bold> bills</a>
 
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" name="zip" class="form-control" placeholder="Address">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
 <!--Table Search v1-->
 <div class="table-search-v1 margin-bottom-20">
   <div class="table-responsive">
@@ -33,9 +44,9 @@
             <th>Phone</th>
             <th>Fax</th>
             <th>Website</th>
-            <th><i class="fa fa-twitter"></th>
-            <th><i class="fa fa-facebook"></th>
-            <th><i class="fa fa-youtube"></th>
+            <th><i class="fa fa-twitter fa-2x"></th>
+            <th><i class="fa fa-facebook fa-2x"></th>
+            <th><i class="fa fa-youtube fa-2x"></th>
             <th>Contact Form</th>
           </tr>
         </thead>
