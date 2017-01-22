@@ -1,27 +1,16 @@
 <div ng-app="app">
-  <div ng-controller="actionsCtrl" ng-init="setup()">
-    Search: <input ng-model="actionsFilter" list="actions">
+  <div ng-controller="legislatorsCtrl" ng-init="setup()">
+    Search: <input ng-model="legislatorsFilter" list="legislators">
     
-    <datalist id="actions">
-      <option ng-repeat="checkpointAction in checkpointActions">{{ checkpointAction.description }}</option>
+    <datalist id="legislators">
+      <option ng-repeat="legislator in legislators">{{ legislator.lastName }}</option>
     </datalist>
 
     <table border=1>
       <tr>
-        <th ng-click="changeOrderAttribute('date')">Name {{ getSortIcon('date') }}</th>
-        <th ng-click="changeOrderAttribute('description')">Bio {{ getSortIcon('description') }}</th>
+        <th ng-click="changeOrderAttribute('lastName')">Last Name {{ getSortIcon('lastName') }}</th>
+        <th ng-click="changeOrderAttribute('party')">Party {{ getSortIcon('party') }}</th>
       </tr>
     </table>
-    <h4>Add Action</h4>
-    <ul>
-      <li ng-repeat="error in errors">{{ error }}</li>
-    </ul>
-    <div>
-      <label>ActionID: </label>
-      <input ng-model="newActionId">
-      <label>Description: </label>
-      <input ng-model="newDescription">
-      <button ng-click="addAction(newActionId, newDescription)">Add Action</button>
-    </div>
   </div>
 </div>
