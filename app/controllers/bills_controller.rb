@@ -3,7 +3,7 @@ class BillsController < ApplicationController
 
   def index
     @data = Unirest.get(
-      "https://congress.api.sunlightfoundation.com/bills?history.active=true&order=last_action_at"
+      "https://congress.api.sunlightfoundation.com/bills?history.active=true&order=last_action_at&fields=type,chamber,committee_ids,congress,cosponsors_count,enacted_as,history,introduced_on,last_action_at,last_version,last_version_on,last_vote_at,official_title,popular_title,related_bill_ids,short_title,sponsor,sponsor_id,urls,withdrawn_cosponsors_count,keywords,summary,summary_short"
     ).body
     @bills = @data["results"]
     render 'index.html.erb'
@@ -12,7 +12,7 @@ class BillsController < ApplicationController
   def show
     # new_uri = (params[:id]).gsub('-', '/')
     @datum = Unirest.get(
-      "https://congress.api.sunlightfoundation.com/bills?bill_id=#{bill_id}"
+      "https://congress.api.sunlightfoundation.com/bills?bill_id=s84-115&fields=keywords,summary,summary_short"
     ).body
     @bill = @datum["results"][0]
     render 'show.html.erb'  

@@ -1,5 +1,4 @@
 class UserBillsController < ApplicationController
-  # HEADERS = { "X-API-Key" => "ACnwGyW9cD70kbaj4JtPW5WypaLdKYNL4V8Coviy" }
 
   def index
     @user_bills = current_user.user_bills
