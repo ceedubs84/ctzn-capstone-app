@@ -9,7 +9,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="heading<%= bill['bill_id'] %>">
           <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="true" aria-controls="collapse<%= bill['bill_id'] %>">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="false" aria-controls="collapse<%= bill['bill_id'] %>">
               <span><b><%= bill["bill_id"].upcase %></b>: <%= bill["official_title"] %></span>
             </a>
           </h4>
@@ -23,7 +23,8 @@
                   <th>Bill ID</th>
                   <th>Sponsor</th>
                   <th># of Cosponsors</th>
-                  <th class="hidden-sm">Title</th>
+                  <th class="hidden-sm">Summary</th>
+                  <th>Subjects</th>
                   <th>Introduced Date</th>
                   <th>Latest Major Action</th>
                   <th>Follow</th>
@@ -41,12 +42,18 @@
                     <div class="user-names">
                       <p><%= bill["sponsor"]["title"] %> <%= bill["sponsor"]["first_name"] %> <%= bill["sponsor"]["last_name"] %></p>
                     </div>
+                    <div>
+                      <p><%= bill["sponsor"]["party"] %> - <%= bill["sponsor"]["state"] %></p>
+                    </div>
                   </td>
                   <td>
                     <p><%= bill["cosponsors_count"] %></p>
                   </td>
                   <td class="td-width">
-                    <p><%= bill["official_title"] %></p>
+                    <p><%= bill["summary_short"] %></p>
+                  </td>
+                  <td>
+                    <p><%= bill["keywords"] %></p>
                   </td>
                   <td>
                     <p>Introduced on <%= bill["introduced_on"] %></p>
