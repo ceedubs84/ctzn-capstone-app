@@ -3,13 +3,17 @@
     Search: <input ng-model="legislatorsFilter" list="legislators">
     
     <datalist id="legislators">
-      <option ng-repeat="legislator in legislators">{{ legislator.lastName }}</option>
+      <option ng-repeat="legislator in legislators">{{ legislator.last_name }}</option>
     </datalist>
 
     <table border=1>
       <tr>
-        <th ng-click="changeOrderAttribute('lastName')">Last Name {{ getSortIcon('lastName') }}</th>
+        <th ng-click="changeOrderAttribute('lastName')">Last Name {{ getSortIcon('last_name') }}</th>
         <th ng-click="changeOrderAttribute('party')">Party {{ getSortIcon('party') }}</th>
+      </tr>
+      <tr ng-repeat="legislator in legislators | filter: {lastName: legislatorsFilter} | orderBy:orderAttribute:isDescending">
+        <td>{{ legislator.last_name }}</td>
+        <td>{{ legislator.party }}</td>
       </tr>
     </table>
   </div>
