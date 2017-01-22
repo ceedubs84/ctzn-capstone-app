@@ -7,6 +7,10 @@ class LegislatorsController < ApplicationController
     render 'index.html.erb'
   end
 
+  def initial
+    self[0,1]
+  end
+
   def show
     @datum = Unirest.get(
       "https://congress.api.sunlightfoundation.com/legislators?bioguide_id=#{params[:id]}"
