@@ -23,5 +23,12 @@ json.array! @bills.each do |bill|
   json.keywords bill["keywords"]
   json.summary bill["summary"]
   json.summary_short bill["summary_short"]
-
 end
+
+# json.array! @upcoming_house_bills.each do |upcoming_house_bill|
+#   json.legislative_day upcoming_house_bill["legislative_day"]
+#   json.chamber upcoming_house_bill["chamber"]
+#   json.bill_id upcoming_house_bill["bill_id"]
+#   json.description upcoming_house_bill["description"]
+#   json.bill_url upcoming_house_bill["bill_url"]
+# end
