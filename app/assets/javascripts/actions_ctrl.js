@@ -13,13 +13,13 @@
       inputStatus.complete = !inputStatus.complete;
     };
 
-    $scope.addCheckpointAction = function(inputActionId, inputDescription, inputDate, inputUserBillId) {
+    $scope.addCheckpointAction = function(inputActionId, inputDescription, inputDate, inputUserBillId, inputUserId) {
       var params = {
-        action_id: inputActionId,
+        actionId: inputActionId,
         description: inputDescription,
         date: inputDate,
-        user_bill_id: inputUserBillId,
-        user_id: currentUserId,
+        userBillId: inputUserBillId,
+        userId: inputUserId,
       };
       $http.post('/api/v1/checkpoint_actions', params).then(function(response) {
         $scope.checkpointActions.push(response.data);
