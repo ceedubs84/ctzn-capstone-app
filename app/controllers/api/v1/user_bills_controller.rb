@@ -5,7 +5,7 @@ class Api::V1::UserBillsController < ApplicationController
   end
 
   def show
-    @user_bill = UserBill.find_by(id: params[:id])
+    @user_bill = UserBill.where(id: params[:id])
     @bill_actions = @user_bill.checkpoint_actions
     render 'show.json.jbuilder'
   end

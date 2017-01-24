@@ -7,6 +7,7 @@
         $scope.checkpointActions = response.data;
         $scope.orderAttribute = 'date';
         $scope.isOrderDescending = true;
+        $scope.progressPercent = 30;
       });
     };
     $scope.toggleComplete = function(inputStatus) {

@@ -22,7 +22,6 @@ class UserBillsController < ApplicationController
   end
 
   def show
-    new_uri = (params[:id]).gsub('-', '/')
     @datum = Unirest.get(
       "#{new_uri}",
       headers: HEADERS
