@@ -47,7 +47,7 @@
             <th><i class="fa fa-twitter fa-2x"></th>
             <th><i class="fa fa-facebook fa-2x"></th>
             <th><i class="fa fa-youtube fa-2x"></th>
-            <th>Contact Form</th>
+            <th>% Vote With Party</th>
           </tr>
         </thead>
         <tbody>
@@ -76,7 +76,16 @@
                 <%= legislator["facebook_id"] %>
               </button>  
             </td>
-            <td><a href="<%= legislator["contact_form"] %>">Contact</a></td>
+            <!-- Pie Charts v1 -->
+            <td>
+              <div class="row pie-progress-charts margin-bottom-60">
+                <div class="inner-pchart col-md-4">
+                  <div class="circle" id="circle-1"></div>
+                  <h3 class="circle-title">% Vote w/Party</h3>
+                </div>
+              </div>
+            </td>
+            <!-- End of Pie Charts v1 -->
           </tr>
         </tbody>
       <% end %>
