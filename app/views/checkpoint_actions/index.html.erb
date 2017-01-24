@@ -21,7 +21,7 @@
                 <td>{{ checkpointAction.user_bill_id }}</td>
                 <td>{{ checkpointAction.description }}</td>
                 <td>{{ checkpointAction.date }}</td>
-                <td ng-click="toggleComplete(status)">{{ checkpointAction.status }}</td>
+                <td ng-click="toggleComplete(checkpoint_action.id, action_id, description, date, user_bill_id)">{{ checkpointAction.status }}</td>
               </tr>
             </tbody>
         </table>

@@ -10,8 +10,20 @@
         $scope.progressPercent = 30;
       });
     };
-    $scope.toggleComplete = function(inputStatus) {
-      inputStatus.complete = !inputStatus.complete;
+    $scope.toggleComplete = function(inputCheckpointActionId, inputActionId, inputDescription, inputDate, inputUserBillId) {
+      var params = {
+        checkpointActionId: inputCheckpointActionId,
+        actionId: inputActionId,
+        status: "complete",
+        description: inputDescription,
+        date: inputDate,
+        userBillId: inputUserBillId,
+      };
+      $http.patch('/api/v1/checkpoint_actions/#{userBillId}', params).then(function(response) {
+        $scope.checkpointActions.push(response.data);
+      }, function(error) {
+        $scope.errors = error.data.errors;
+      });
     };
 
     $scope.addCheckpointAction = function(inputActionId, inputDescription, inputDate, inputUserBillId, inputUserId) {
@@ -27,13 +39,6 @@
       }, function(error) {
         $scope.errors = error.data.errors;
       });
-    };
-
-    $scope.deleteCheckpointAction = function(inputCheckpointAction) {
-      var index = $scope.checkpointActions.indexOf(inputCheckpointAction);
-      if (index !== -1) {
-        $scope.checkpointActions.splice(index, 1);
-      }
     };
 
     $scope.changeOrderAttribute = function(inputAttribute) {
