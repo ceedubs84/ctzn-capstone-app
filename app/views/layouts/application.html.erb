@@ -45,6 +45,15 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
   <div class="wrapper">
     <!--=== Header ===-->
     <div class="header">
@@ -328,6 +337,7 @@
   <script type="text/javascript" src="/assets/js/app.js"></script>
   <script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script>
   <script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/circles-master.js"></script>
   <script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function() {

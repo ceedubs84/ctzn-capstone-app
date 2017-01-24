@@ -65,15 +65,17 @@
               </div>
             </td>
             <td>
-              <button class="btn btn-block btn-youtube-inversed rounded">
-                <i class="fa fa-youtube"></i>
-                <%= legislator["youtube_id"] %>
+              <button class="btn btn-block btn-facebook-inversed rounded">
+                <i class="fa fa-facebook"></i>
+                <%= legislator["facebook_id"] %>
               </button>
+              <div class="fb-page" data-href="https://www.facebook.com/<%= legislator["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= legislator["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= legislator["facebook_id"] %>">Facebook</a></blockquote>
+              </div>
             </td>
             <td>
               <button class="btn btn-block btn-youtube-inversed rounded">
                 <i class="fa fa-youtube"></i>
-                <%= legislator["facebook_id"] %>
+                <%= legislator["youtube_id"] %>
               </button>  
             </td>
             <!-- Pie Charts v1 -->
