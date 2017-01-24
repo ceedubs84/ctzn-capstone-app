@@ -60,6 +60,9 @@
                 <i class="fa fa-twitter"></i>
                 <%= legislator["twitter_id"] %>
               </button>
+              <div>
+                <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= legislator["twitter_id"] %>">Tweets</a>
+              </div>
             </td>
             <td>
               <button class="btn btn-block btn-youtube-inversed rounded">
@@ -88,3 +91,4 @@
 <div>
   <a href="/logout">Log out!</a>
 </div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
