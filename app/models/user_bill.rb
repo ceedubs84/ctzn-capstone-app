@@ -3,8 +3,8 @@ class UserBill < ApplicationRecord
   has_many :checkpoint_actions
 
   def progress_percent
-    num_checkpoint_actions = 10
-    num_completed = 3
+    num_checkpoint_actions = user_bill.checkpoint_actions
+    num_completed = num_checkpoint_actions.where(status: "complete")
     return (num_completed / num_checkpoint_actions.to_f) * 100
   end
 end
