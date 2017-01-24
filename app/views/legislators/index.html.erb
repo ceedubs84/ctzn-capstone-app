@@ -25,7 +25,8 @@
             <th>Party</th>        
             <th>Leadership Role</th>
             <th>Term</th>
-            <th>Office</th>
+            <th><i class="fa fa-twitter fa-2x"></th>
+            <th><i class="fa fa-facebook fa-2x"></th>
           </tr>
         </thead>
         <tbody>
@@ -36,25 +37,6 @@
             <td><%= legislator["party"] %></td>
             <td><%= legislator["leadership_role"] %></td>
             <td><%= legislator["term_start"] %> - <%= legislator["term_end"] %></td>
-            <td><%= legislator["office"] %></td>
-          </tr>
-        </tbody>
-        <thead>
-          <tr>
-            <th>Phone</th>
-            <th>Fax</th>
-            <th>Website</th>
-            <th><i class="fa fa-twitter fa-2x"></th>
-            <th><i class="fa fa-facebook fa-2x"></th>
-            <th><i class="fa fa-youtube fa-2x"></th>
-            <th>% Vote With Party</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= legislator["phone"] %></td>
-            <td><%= legislator["fax"] %></td>
-            <td><a href="<%= legislator["website"] %>">Website</a></td>
             <td>
               <button class="btn btn-block btn-twitter-inversed rounded">
                 <i class="fa fa-twitter"></i>
@@ -72,12 +54,25 @@
               <div class="fb-page" data-href="https://www.facebook.com/<%= legislator["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= legislator["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= legislator["facebook_id"] %>">Facebook</a></blockquote>
               </div>
             </td>
-            <td>
-              <button class="btn btn-block btn-youtube-inversed rounded">
-                <i class="fa fa-youtube"></i>
-                <%= legislator["youtube_id"] %>
-              </button>  
-            </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>Phone</th>
+            <th>Fax</th>
+            <th>Office</th>
+            <th>Website</th>
+            <th>% Vote With Party</th>
+            <th><i class="fa fa-youtube fa-2x"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= legislator["phone"] %></td>
+            <td><%= legislator["fax"] %></td>
+            <td><%= legislator["office"] %></td>
+            <td><a href="<%= legislator["website"] %>">Website</a></td>
+            
             <!-- Pie Charts v1 -->
             <td>
               <div class="row pie-progress-charts margin-bottom-60">
@@ -88,6 +83,13 @@
               </div>
             </td>
             <!-- End of Pie Charts v1 -->
+            <td>
+              <button class="btn btn-block btn-youtube-inversed rounded">
+                <i class="fa fa-youtube"></i>
+                <%= legislator["youtube_id"] %>
+              </button>  
+            </td>
+            
           </tr>
         </tbody>
       <% end %>
