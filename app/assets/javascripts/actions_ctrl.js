@@ -10,17 +10,19 @@
         $scope.progressPercent = 30;
       });
     };
-    $scope.toggleComplete = function(inputCheckpointActionId, inputActionId, inputDescription, inputDate, inputUserBillId) {
+    
+    $scope.toggleComplete = function(inputCheckpointAction) {
+
       var params = {
-        checkpointActionId: inputCheckpointActionId,
-        actionId: inputActionId,
-        status: "complete",
-        description: inputDescription,
-        date: inputDate,
-        userBillId: inputUserBillId,
+        action_id: inputCheckpointAction.action_id,
+        status: "Complete",
+        description: inputCheckpointAction.description,
+        date: inputCheckpointAction.date,
+        user_bill_id: inputCheckpointAction.user_bill_id,
       };
-      $http.patch('/api/v1/checkpoint_actions/#{userBillId}', params).then(function(response) {
-        $scope.checkpointActions.push(response.data);
+      $http.patch('/api/v1/checkpoint_actions/' + inputCheckpointAction.id, params).then(function(response) {
+        var index = $scope.checkpointActions.indexOf(inputCheckpointAction);
+        $scope.checkpointActions.splice(index, 1);
       }, function(error) {
         $scope.errors = error.data.errors;
       });
