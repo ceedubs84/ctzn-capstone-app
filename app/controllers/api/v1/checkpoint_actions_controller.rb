@@ -22,8 +22,22 @@ class Api::V1::CheckpointActionsController < ApplicationController
     end
   end
 
+  def update
+    @checkpoint_action = CheckpointAction.find_by(id: params[:id])
+    @checkpoint_action.action_id = params[:action_id]
+    @checkpoint_action.description = params[:description]
+    @checkpoint_action.date = params[:date]
+    @checkpoint_action.user_bill_id = params[:user_bill_id]
+    @checkpoint_action.user_id = current_user.id
+    @checkpoint_action.status = params[:status]
+    @checkpoint_action.save
+    
+    flash[:success] = "Action Completed!! Great job!"
+    render 'show.json.jbuilder'
+  end
+
   def show
-    @checkpoint_action = CheckpointAction.where(user_bill_id: params[:id])
+    @checkpoint_action = CheckpointAction.find_by(id: params[:id])
     render 'show.json.jbuilder'
   end
 end
