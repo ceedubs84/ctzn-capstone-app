@@ -19,11 +19,13 @@
                     </div>
                     <div class="col-md-7">
                       <h2><%= @legislators.first["title"] %> <%= @legislators.first["first_name"] %> <%= @legislators.first["last_name"] %></h2>
-                      <span><strong>Job:</strong><%= @legislators.first["party"] %> - <%= @legislators.first["state_name"] %></span>
-                      <span><strong>Position:</strong><%= @legislators.first["leadership_role"] %></span>
+                      <div><strong>Job: </strong><%= @legislators.first["party"] %> - <%= @legislators.first["state_name"] %></div>
+                      <div><strong>Position: </strong><%= @legislators.first["leadership_role"] %></div>
                       <hr>
-                      <p>FILL IN BIO INFO HERE, IF POSSIBLE.</p>
-                      <p>CHECK FOR WAY TO LINK TO CONGRESS INFO</p>
+                      <div><strong>Phone: </strong><%= @legislators.first["phone"] %></div>
+                      <div><strong>Fax: </strong><%= @legislators.first["fax"] %></div>
+                      <div><strong>Website: </strong><%= @legislators.first["website"] %></div>
+                      <div><strong>Term: </strong><%= @legislators.first["term_start"] %> <strong>-</strong> <%= @legislators.first["term_end"] %></div>
                     </div>
                   </div>
                 </div><!--/end row-->
@@ -154,12 +156,12 @@
                     </ul>
                   </div>
                 </div> -->
-                <!--End Timeline row 3??-->
+                <!--End Timeline row 4??-->
 
                 <hr>
               </div>
 
-              <div id="<%= @legislators.second["bioguide_id"] %>" class="profile-edit tab-pane fade in active">
+              <div id="<%= @legislators.second["bioguide_id"] %>" class="profile-edit tab-pane fade">
                 <div class="profile-bio">
                   <div class="row">
                     <div class="col-md-5">
@@ -167,11 +169,13 @@
                     </div>
                     <div class="col-md-7">
                       <h2><%= @legislators.second["title"] %> <%= @legislators.second["first_name"] %> <%= @legislators.second["last_name"] %></h2>
-                      <span><strong>Job:</strong><%= @legislators.second["party"] %> - <%= @legislators.second["state_name"] %></span>
-                      <span><strong>Position:</strong><%= @legislators.second["leadership_role"] %></span>
+                      <div><strong>Job: </strong><%= @legislators.second["party"] %> - <%= @legislators.second["state_name"] %></div>
+                      <div><strong>Position: </strong><%= @legislators.second["leadership_role"] %></div>
                       <hr>
-                      <p>FILL IN BIO INFO HERE, IF POSSIBLE.</p>
-                      <p>CHECK FOR WAY TO LINK TO CONGRESS INFO</p>
+                      <div><strong>Phone: </strong><%= @legislators.second["phone"] %></div>
+                      <div><strong>Fax: </strong><%= @legislators.second["fax"] %></div>
+                      <div><strong>Website: </strong><%= @legislators.second["website"] %></div>
+                      <div><strong>Term: </strong><%= @legislators.second["term_start"] %> <strong>-</strong> <%= @legislators.second["term_end"] %></div>
                     </div>
                   </div>
                 </div><!--/end row-->
@@ -315,11 +319,13 @@
                     </div>
                     <div class="col-md-7">
                       <h2><%= @legislators.last["title"] %> <%= @legislators.last["first_name"] %> <%= @legislators.last["last_name"] %></h2>
-                      <span><strong>Job:</strong><%= @legislators.last["party"] %> - <%= @legislators.last["state_name"] %></span>
-                      <span><strong>Position:</strong><%= @legislators.last["leadership_role"] %></span>
+                      <div><strong>Job: </strong><%= @legislators.last["party"] %> - <%= @legislators.last["state_name"] %></div>
+                      <div><strong>Position: </strong><%= @legislators.last["leadership_role"] %></div>
                       <hr>
-                      <p>FILL IN BIO INFO HERE, IF POSSIBLE.</p>
-                      <p>CHECK FOR WAY TO LINK TO CONGRESS INFO</p>
+                      <div><strong>Phone: </strong><%= @legislators.last["phone"] %></div>
+                      <div><strong>Fax: </strong><%= @legislators.last["fax"] %></div>
+                      <div><strong>Website: </strong><%= @legislators.last["website"] %></div>
+                      <div><strong>Term: </strong><%= @legislators.last["term_start"] %> <strong>-</strong> <%= @legislators.last["term_end"] %></div>
                     </div>
                   </div>
                 </div><!--/end row-->
