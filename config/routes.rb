@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       get '/checkpoint_actions' => 'checkpoint_actions#index'
       get '/checkpoint_actions/new' => 'checkpoint_actions#new'
       post '/checkpoint_actions' => 'checkpoint_actions#create'
+      patch '/checkpoint_actions/:id' => 'checkpoint_actions#update'
       get '/checkpoint_actions/:id' => 'checkpoint_actions#show'
       delete '/checkpoint_actions/:id' => 'checkpoint_actions#destroy'
 
