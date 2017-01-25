@@ -1,9 +1,12 @@
+
+<!-- END OF ORIGINAL SECTION -->
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <title>CTZN Capstone App</title>
+  <title>Profile Me | Unify - Responsive Website Template</title>
 
   <!-- Meta -->
   <meta charset="utf-8">
@@ -29,8 +32,13 @@
   <link rel="stylesheet" href="/assets/plugins/animate.css">
   <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
   <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/assets/plugins/parallax-slider/css/parallax-slider.css">
-  <link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+  <link rel="stylesheet" href="/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+
+  <!-- CSS Page Style -->
+  <link rel="stylesheet" href="/assets/css/pages/profile.css">
+  <link rel="stylesheet" href="/assets/css/pages/shortcode_timeline2.css">
 
   <!-- CSS Theme -->
   <link rel="stylesheet" href="/assets/css/theme-colors/default.css" id="style_color">
@@ -38,10 +46,6 @@
 
   <!-- CSS Customization -->
   <link rel="stylesheet" href="/assets/css/custom.css">
-    
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
@@ -53,7 +57,7 @@
         <a class="logo" href="/user_bills">
           <img src="/assets/img/onlinelogomaker-011917-1912-7203.png" alt="Logo">
         </a>
-        <!-- End Logo -->
+        <!-- End LogoOOOOO -->
 
         <!-- Topbar -->
         <div class="topbar">
@@ -64,14 +68,14 @@
             <li><a href="/logout">Logout</a></li>
           </ul>
         </div>
-        <!-- End Topbar -->
+        <!-- End TopbarOOOOO -->
 
         <!-- Toggle get grouped for better mobile display -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="fa fa-bars"></span>
         </button>
-        <!-- End Toggle -->
+        <!-- End ToggleOOOOO -->
       </div><!--/end container-->
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,31 +88,31 @@
                 myBills
               </a>
             </li>
-            <!-- End Home -->
+            <!-- End HomeOOOOO -->
 
-            <!-- Pages -->
+            <!-- Bills -->
             <li class="dropdown">
               <a href="/bills">
                 Bill Search
               </a>
             </li>
-            <!-- End Pages -->
+            <!-- End BillsOOOOO -->
 
-            <!-- Blog -->
+            <!-- Legislators -->
             <li class="dropdown">
               <a href="/legislators">
                 Legislators
               </a>
             </li>
-            <!-- End Blog -->
+            <!-- End LegislatorsOOOOO -->
 
-            <!-- Portfolio -->
+            <!-- CheckpointActions -->
             <li class="dropdown">
               <a href="/checkpoint_actions">
                 myActions
               </a>
             </li>
-            <!-- End Portfolio -->
+            <!-- End CheckpointActionsOOOOO -->
 
             <!-- Search Block -->
             <li>
@@ -127,15 +131,17 @@
         </div><!--/end container-->
       </div><!--/navbar-collapse-->
     </div>
-    <!--=== End Header ===-->
-      <!--=== Profile ===-->
+    <!--=== End HeaderOOOOO ===-->
+
+    <!--=== Profile ===-->
     <div class="container content profile">
       <div class="row">
         <!--Left Sidebar-->
         <div class="col-md-3 md-margin-bottom-40">
           <img class="img-responsive profile-img margin-bottom-20" src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" alt="">
+
           <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-            <li class="list-group-item">
+            <li class="list-group-item active">
               <a href="/user_bills"><i class="fa fa-user"></i> myBills</a>
             </li>
             <li class="list-group-item">
@@ -149,40 +155,69 @@
             </li>
           </ul>
 
+          <div class="panel-heading-v2 overflow-h">
+            <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Task Progress</h2>
+            <a href="#"><i class="fa fa-cog pull-right"></i></a>
+          </div>
+          <h3 class="heading-xs">House Members<span class="pull-right">92%</span></h3>
+          <div class="progress progress-u progress-xxs">
+            <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+            </div>
+          </div>
+          <h3 class="heading-xs">Senate Members<span class="pull-right">85%</span></h3>
+          <div class="progress progress-u progress-xxs">
+            <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="margin-bottom-50"></div>
+
           <!--Datepicker-->
           <form action="#" id="sky-form2" class="sky-form">
             <div id="inline-start"></div>
           </form>
           <!--End Datepicker-->
         </div>
-        <!--End Left Sidebar-->  
+        <!--End Left Sidebar-->
 
+        <!-- Profile Content -->
+        <div class="col-md-9">
+          <div class="profile-body">
+            <div class="profile-bio">
+              <div class="row"><!-- THIS IS THE MAIN AREA FOR CONTENT -->
+                <% flash.each do |name, message| %>
+                  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <%= message %>
+                  </div>
+                <% end %>
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Profile Content -->
       </div>
     </div>
-      <!--=== End Profile ===-->
-      <% flash.each do |name, message| %>
-        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <%= message %>
-        </div>
-      <% end %>
-      <%= yield %>
+    <!--=== End Profile ===-->
 
-      <!--=== Footer Version 1 ===-->
+    <!--=== Footer Version 1 ===-->
       <div class="footer-v1">
         <div class="footer">
           <div class="container">
             <div class="row">
               <!-- About -->
-              <div class="col-md-3 md-margin-bottom-40">
+              <div class="col-md-4 md-margin-bottom-40">
                 <a href="index.html"><img id="logo-footer" class="footer-logo" src="/assets/img/logo2-default.png" alt=""></a>
                 <p>CTZN was designed to facilitate civic engagement between citizens and their legislators.</p>
                 <p>We at CTZN strive to give users timely, complete, and accurate data so that they can make informed decisions about legislation, and so they can keep track of the actions they have taken related to it.</p>
-              </div><!--/col-md-3-->
+              </div><!--/col-md-4-->
               <!-- End About -->
 
               <!-- Link List -->
-              <div class="col-md-3 md-margin-bottom-40">
+              <div class="col-md-4 md-margin-bottom-40">
                 <div class="headline"><h2>Useful Links</h2></div>
                 <ul class="list-unstyled link-list">
                   <li><a href="/user_bills">myBills</a><i class="fa fa-angle-right"></i></li>
@@ -191,11 +226,11 @@
                   <li><a href="/checkpoint_actions">Actions</a><i class="fa fa-angle-right"></i></li>
                   <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
                 </ul>
-              </div><!--/col-md-3-->
+              </div><!--/col-md-4-->
               <!-- End Link List -->
 
               <!-- Address -->
-              <div class="col-md-3 map-img md-margin-bottom-40">
+              <div class="col-md-4 map-img md-margin-bottom-40">
                 <div class="headline"><h2>Contact Us</h2></div>
                 <address class="md-margin-bottom-40">
                   222 W Merchandise Mart Plaza #1212 <br />
@@ -204,7 +239,7 @@
                   Fax: 800 123 3456 <br />
                   Email: <a href="mailto:info@ctzn.com" class="">info@ctzn.com</a>
                 </address>
-              </div><!--/col-md-3-->
+              </div><!--/col-md-4-->
               <!-- End Address -->
             </div>
           </div>
@@ -343,32 +378,31 @@
   </div><!--/style-switcher-->
   <!--=== End Style Switcher ===-->
 
-
   <!-- JS Global Compulsory -->
-  <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
   <!-- JS Implementing Plugins -->
-  <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
-  <script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script>
-  <script type="text/javascript" src="/assets/plugins/parallax-slider/js/modernizr.js"></script>
-  <script type="text/javascript" src="/assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
-  <script type="text/javascript" src="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+  <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+  <script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+  <script type="text/javascript" src="assets/plugins/circles-master/circles.js"></script>
+  <script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
   <!-- JS Customization -->
-  <script type="text/javascript" src="/assets/js/custom.js"></script>
+  <script type="text/javascript" src="assets/js/custom.js"></script>
   <!-- JS Page Level -->
-  <script type="text/javascript" src="/assets/js/app.js"></script>
-  <script type="text/javascript" src="/assets/js/plugins/owl-carousel.js"></script>
-  <script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script>
-  <script type="text/javascript" src="/assets/js/plugins/circles-master.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/datepicker.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/circles-master.js"></script>
   <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script type="text/javascript" src="/assets/js/plugins/parallax-slider.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function() {
       App.init();
-      OwlCarousel.initOwlCarousel();
+      App.initScrollBar();
+      Datepicker.initDatepicker();
+      CirclesMaster.initCirclesMaster1();
       StyleSwitcher.initStyleSwitcher();
-      ParallaxSlider.initParallaxSlider();
     });
   </script>
   <script>
@@ -380,11 +414,10 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-    <!--[if lt IE 9]>
-      <script src="assets/plugins/respond.js"></script>
-      <script src="assets/plugins/html5shiv.js"></script>
-      <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-    <![endif]-->
-
+  <!--[if lt IE 9]>
+  <script src="assets/plugins/respond.js"></script>
+  <script src="assets/plugins/html5shiv.js"></script>
+  <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
 </body>
 </html>
