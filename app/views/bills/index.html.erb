@@ -1,117 +1,83 @@
 <div><em>Welcome, </em><bold><%= current_user.first_name %></bold></div>
-<a href="/user_bills">See <bold>your</bold> bills</a>
 
-<div><a href="/logout">Log out!</a></div>
-<body>
-  <div ng-app="app">
-    <div ng-controller="billsCtrl" ng-init="setup()">
-      <h2>Federal Legislation</h2>
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <% @bills.each do |bill| %>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading<%= bill['bill_id'] %>">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="false" aria-controls="collapse<%= bill['bill_id'] %>">
-                  <span><b><%= bill["bill_id"].upcase %></b>: <%= bill["official_title"] %></span>
-                </a>
-              </h4>
-            </div>
-            <div id="collapse<%= bill['bill_id'] %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= bill['bill_id'] %>">
-              <div class="panel-body">
-                <table class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Congress</th>
-                      <th>Bill ID</th>
-                      <th>Sponsor</th>
-                      <th># of Cosponsors</th>
-                      <th class="hidden-sm">Summary</th>
-                      <th>Subjects</th>
-                      <th>Introduced Date</th>
-                      <th>Latest Major Action</th>
-                      <th>Follow</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <p><%= bill["congress"] %></p>
-                      </td>
-                      <td>
-                        <p><%= bill["bill_id"].upcase %></p>
-                      </td>
-                      <td>
-                        <div class="user-names">
-                          <p><%= bill["sponsor"]["title"] %> <%= bill["sponsor"]["first_name"] %> <%= bill["sponsor"]["last_name"] %></p>
-                        </div>
-                        <div>
-                          <p><%= bill["sponsor"]["party"] %> - <%= bill["sponsor"]["state"] %></p>
-                        </div>
-                      </td>
-                      <td>
-                        <p><%= bill["cosponsors_count"] %></p>
-                      </td>
-                      <td class="td-width">
-                        <p><%= bill["summary_short"] %></p>
-                      </td>
-                      <td>
-                        <p><%= bill["keywords"] %></p>
-                      </td>
-                      <td>
-                        <p>Introduced on <%= bill["introduced_on"] %></p>
-                      </td>
-                      <td>
-                        <p><%= bill["last_action_at"] %></p>
-                      </td>
-                      <td>
-                        <form action="/user_bills" method="post">
-                          <input type="hidden" name="official_title" value="<%= bill["official_title"] %>">
-                          <input type="hidden" name="user_id" value="<%= current_user.id %>">
-                          <input type="hidden" name="bill_id" value="<%= bill["bill_id"] %>">
-                          <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-plus-square-o fa-2x"></i>
-                          </button>
-                        </form>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+
+<div ng-app="app">
+  <div ng-controller="billsCtrl" ng-init="setup()">
+    <h2>Federal Legislation</h2>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <% @bills.each do |bill| %>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading<%= bill['bill_id'] %>">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= bill['bill_id'] %>" aria-expanded="false" aria-controls="collapse<%= bill['bill_id'] %>">
+                <span><b><%= bill["bill_id"].upcase %></b>: <%= bill["official_title"] %></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapse<%= bill['bill_id'] %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<%= bill['bill_id'] %>">
+            <div class="panel-body">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Congress</th>
+                    <th>Bill ID</th>
+                    <th>Sponsor</th>
+                    <th># of Cosponsors</th>
+                    <th class="hidden-sm">Summary</th>
+                    <th>Subjects</th>
+                    <th>Introduced Date</th>
+                    <th>Latest Major Action</th>
+                    <th>Follow</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p><%= bill["congress"] %></p>
+                    </td>
+                    <td>
+                      <p><%= bill["bill_id"].upcase %></p>
+                    </td>
+                    <td>
+                      <div class="user-names">
+                        <p><%= bill["sponsor"]["title"] %> <%= bill["sponsor"]["first_name"] %> <%= bill["sponsor"]["last_name"] %></p>
+                      </div>
+                      <div>
+                        <p><%= bill["sponsor"]["party"] %> - <%= bill["sponsor"]["state"] %></p>
+                      </div>
+                    </td>
+                    <td>
+                      <p><%= bill["cosponsors_count"] %></p>
+                    </td>
+                    <td class="td-width">
+                      <p><%= bill["summary_short"] %></p>
+                    </td>
+                    <td>
+                      <p><%= bill["keywords"] %></p>
+                    </td>
+                    <td>
+                      <p>Introduced on <%= bill["introduced_on"] %></p>
+                    </td>
+                    <td>
+                      <p><%= bill["last_action_at"] %></p>
+                    </td>
+                    <td>
+                      <form action="/user_bills" method="post">
+                        <input type="hidden" name="official_title" value="<%= bill["official_title"] %>">
+                        <input type="hidden" name="user_id" value="<%= current_user.id %>">
+                        <input type="hidden" name="bill_id" value="<%= bill["bill_id"] %>">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fa fa-plus-square-o fa-2x"></i>
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</body>
-<!-- JS Global Compulsory -->
-  <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/jquery/jquery-migrate.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-  <!-- JS Implementing Plugins -->
-  <script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
-  <script type="text/javascript" src="/assets/plugins/smoothScroll.js"></script>
-  <script type="text/javascript" src="/assets/plugins/counter/waypoints.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/counter/jquery.counterup.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <!-- JS Customization -->
-  <script type="text/javascript" src="/assets/js/custom.js"></script>
-  <!-- JS Page Level -->
-  <script type="text/javascript" src="/assets/js/app.js"></script>
-  <script type="text/javascript" src="/assets/js/plugins/datepicker.js"></script>
-  <script type="text/javascript" src="/assets/js/plugins/style-switcher.js"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-      App.init();
-      App.initCounter();
-      App.initScrollBar();
-      Datepicker.initDatepicker();
-      StyleSwitcher.initStyleSwitcher();
-    });
-  </script>
-  <!--[if lt IE 9]>
-  <script src="/assets/plugins/respond.js"></script>
-  <script src="/assets/plugins/html5shiv.js"></script>
-  <script src="/assets/plugins/placeholder-IE-fixes.js"></script>
-  <![endif]-->
+</div>
