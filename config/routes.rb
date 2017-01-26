@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/bills/:id' => 'bills#show', :constraints => { :id => /[^\/]+/ }
   get '/test' => 'bills#test'
 
-  get '/' => 'user_bills#index'
+  
   get '/user_bills' => 'user_bills#index'
   post '/user_bills' => 'user_bills#create'
   get '/user_bills/:id' => 'user_bills#show', :constraints => { :id => /[^\/]+/ }
