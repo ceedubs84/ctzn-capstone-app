@@ -1,51 +1,4 @@
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <form action="/checkpoint_actions" method="post">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Create New Action</h4>
-        </div>
-        <div class="modal-body">
-          <div>
-            <input list="actions" name="action_id">
-              <datalist id="actions">
-                <option value="1">Call
-                <option value="2">Write
-                <option value="3">Email
-                <option value="4">Attend
-                <option value="5">Register
-                <option value="6">Volunteer
-                <option value="7">Organize
-                <option value="8">Vote
-              </datalist>
-          </div>
 
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-            <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
-          </div>
-
-          <div class="input-group margin-bottom-20">
-            <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
-            <input type="date" name="date" class="form-control rounded-right" placeholder="Due Date">
-          </div>
-
-          <div>  
-            <input type="hidden" name="user_bill_id" class="form-control rounded-right" placeholder="params[:user_bill_id]" id="modal-user-bill-id">
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Add</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<!-- End of Modal -->
 
 <!--Begin New Table-->
 <h3>My Federal Legislation</h3>
@@ -107,54 +60,7 @@
                     <button type="button" class="btn btn-primary btn-sm open-modal" data-bill-id="<%= user_bill.id %>">
                       <i class="fa fa-plus-square-o fa-2x"></i>
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <form action="/checkpoint_actions" method="post">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="myModalLabel">Create New Action</h4>
-                            </div>
-                            <div class="modal-body">
-                              <div>
-                                <input list="actions" name="action_id">
-                                  <datalist id="actions">
-                                    <option value="1">Call
-                                    <option value="2">Write
-                                    <option value="3">Email
-                                    <option value="4">Attend
-                                    <option value="5">Register
-                                    <option value="6">Volunteer
-                                    <option value="7">Organize
-                                    <option value="8">Vote
-                                  </datalist>
-                              </div>
 
-                              <div class="input-group margin-bottom-20">
-                                <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
-                                <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
-                              </div>
-
-                              <div class="input-group margin-bottom-20">
-                                <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
-                                <input type="date" name="date" class="form-control rounded-right" placeholder="Due Date">
-                              </div>
-
-                              <div>  
-                                <input type="hidden" name="user_bill_id" class="form-control rounded-right" placeholder="params[:user_bill_id]" id="modal-user-bill-id">
-                              </div>
-
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <!-- End of Modal -->
                     <a class="btn btn-primary btn-sm" role="button" href="/checkpoint_actions/<%= user_bill.id %>"><i class="fa fa-eye fa-2x"></i>
                     </a>
                   </td>
@@ -181,3 +87,52 @@
 </div><!-- panel-group -->
         <!--End New Table-->
   <!--/wrapper-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <form action="/checkpoint_actions" method="post">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Create New Action</h4>
+        </div>
+        <div class="modal-body">
+          <div>
+            <input list="actions" name="action_id">
+              <datalist id="actions">
+                <option value="1">Call
+                <option value="2">Write
+                <option value="3">Email
+                <option value="4">Attend
+                <option value="5">Register
+                <option value="6">Volunteer
+                <option value="7">Organize
+                <option value="8">Vote
+              </datalist>
+          </div>
+
+          <div class="input-group margin-bottom-20">
+            <span class="input-group-addon rounded-left"><i class="icon-pencil"></i></span>
+            <input type="text" name="description" class="form-control rounded-right" placeholder="Description">
+          </div>
+
+          <div class="input-group margin-bottom-20">
+            <span class="input-group-addon rounded-left"><i class="icon-calendar"></i></span>
+            <input type="date" name="date" class="form-control rounded-right" placeholder="Due Date">
+          </div>
+
+          <div>  
+            <input type="hidden" name="user_bill_id" class="form-control rounded-right" placeholder="params[:user_bill_id]" id="modal-user-bill-id">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End of Modal -->
