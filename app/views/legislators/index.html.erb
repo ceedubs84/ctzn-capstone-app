@@ -32,7 +32,7 @@
           </div>
           <hr>
         <!-- End ROW ABOUT ME -->            
-          <!-- Start Row1 -->
+          <!-- Start Row1 Fake databars -->
           <div class="row about-me">
             <!-- Smallest Progress Bar1 -->
             <div class="col-md-6 md-margin-bottom-20">
@@ -68,38 +68,46 @@
           </div>
           <hr>
           <!-- End ROW1 -->
-          <!-- Start Row2 -->
+          <!-- Start Row2 facebook&twitter-->
           <div class="row about-me">
-            <div class="col-md-6 md-margin-bottom-20">
+            <div class="col-md-4 md-margin-bottom-20">
               <div id="fb-root">
                 <div class="fb-page" data-href="https://www.facebook.com/<%= legislator["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= legislator["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= legislator["facebook_id"] %>">Facebook</a></blockquote>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 md-margin-bottom-20">
+            <div class="col-md-4 md-margin-bottom-20">
               <div id="twitter-root">
-                <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= legislator["twitter_id"] %>">Tweets</a>
+                <a class="twitter-timeline" data-width="300" data-height="500" href="https://twitter.com/<%= legislator["twitter_id"] %>">Tweets</a>
+              </div>
+            </div>
+            <div class="col-md-4 md-margin-bottom-20">
+              <div id="fb-root">
+                <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= legislator["youtube_id"] %>" width="100%" height="400"></iframe>
               </div>
             </div>
           </div>
           <hr>
           <!-- End ROW2 -->
-          <!-- Start Row3 -->
+        <% end %>
+        <!-- Start Row3 news&advocacy&bedfellows-->
           <div class="row about-me">
-            <div class="col-md-6 md-margin-bottom-20">
-              <div id="fb-root">
-                <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= legislator["youtube_id"] %>" width="480" height="400"></iframe>
-              </div>
+            <div class="col-md-4 md-margin-bottom-20">
+              <script src='http://nmp.newsgator.com/NGBuzz/buzz.ashx?buzzId=22831&apiToken=9D9777380B444F66911974A1875C3BA7&trkp=1EFB2172-0F5B-E2B2-1EE5-E32A6F8960B5&trkm=' type='text/javascript'></script>
             </div>
-            <div class="col-md-6 md-margin-bottom-20">
+            <div class="col-md-4 md-margin-bottom-20">
               <iframe src="http://widgets.cqpress.com/bedfellows/bedfellows.aspx" width="302" height="442"></iframe>
+            </div>
+            <div class="col-md-4 md-margin-bottom-20">
+              <script
+               id = "countable-message-lawmaker"
+               src = "https://assets.countable.us/widgets/message-your-lawmaker/countable-message-lawmaker.js"
+               type = "text/javascript" async>
+              </script>
             </div>
           </div>
           <hr>
           <!-- End ROW3 -->
-            
-
-        <% end %>
       </div>
     </div>
     <!--=== End About Me ===-->
