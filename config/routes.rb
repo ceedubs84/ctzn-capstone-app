@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/' => 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/bills' => 'bills#index'
   get '/bills/:id' => 'bills#show', :constraints => { :id => /[^\/]+/ }

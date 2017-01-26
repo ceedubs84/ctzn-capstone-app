@@ -46,6 +46,10 @@
 
   <!-- CSS Customization -->
   <link rel="stylesheet" href="/assets/css/custom.css">
+      
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
@@ -54,7 +58,7 @@
     <div class="header">
       <div class="container">
         <!-- Logo -->
-        <a class="logo" href="/user_bills">
+        <a class="logo" href="/">
           <img src="/assets/img/onlinelogomaker-011917-1912-7203.png" alt="Logo">
         </a>
         <!-- End LogoOOOOO -->
@@ -134,75 +138,7 @@
     </div>
     <!--=== End HeaderOOOOO ===-->
 
-    <!--=== Profile ===-->
-    <div class="container content profile">
-      <div class="row">
-        <!--Left Sidebar-->
-        <div class="col-md-2 md-margin-bottom-40">
-          <img class="img-responsive profile-img margin-bottom-20" src="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif" alt="">
-
-          <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-            <li class="list-group-item active">
-              <a href="/user_bills"><i class="fa fa-user"></i> myBills</a>
-            </li>
-            <li class="list-group-item">
-              <a href="/legislators"><i class="fa fa-group"></i> myLegislators</a>
-            </li>
-            <li class="list-group-item">
-              <a href="/bills"><i class="fa fa-search-plus"></i> Bill Search</a>
-            </li>
-            <li class="list-group-item">
-              <a href="/checkpoint_actions"><i class="fa fa-list-ol"></i> All Open Actions</a>
-            </li>
-          </ul>
-
-          <div class="panel-heading-v2 overflow-h">
-            <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> myActions Progress</h2>
-            <a href="#"><i class="fa fa-cog pull-right"></i></a>
-          </div>
-          <h3 class="heading-xs">House Members<span class="pull-right">92%</span></h3>
-          <div class="progress progress-u progress-xxs">
-            <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-red">
-            </div>
-          </div>
-          <h3 class="heading-xs">Senate Members<span class="pull-right">85%</span></h3>
-          <div class="progress progress-u progress-xxs">
-            <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
-            </div>
-          </div>
-
-          <hr>
-
-          <div class="margin-bottom-50"></div>
-
-          <!--Datepicker-->
-          <form action="#" id="sky-form2" class="sky-form">
-            <div id="inline-start"></div>
-          </form>
-          <!--End Datepicker-->
-        </div>
-        <!--End Left Sidebar-->
-
-        <!-- Profile Content -->
-        <div class="col-md-10">
-          <div class="profile-body">
-            <div class="profile-bio">
-              <div class="row"><!-- THIS IS THE MAIN AREA FOR CONTENT -->
-                <% flash.each do |name, message| %>
-                  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <%= message %>
-                  </div>
-                <% end %>
-                <%= yield %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Profile Content -->
-      </div>
-    </div>
-    <!--=== End Profile ===-->
+    <%= yield %>
 
     <!--=== Footer Version 1 ===-->
       <div class="footer-v1">
@@ -304,80 +240,6 @@
       <!--=== End Footer Version 1 ===-->
   </div><!--/wrapper-->
 
-  <!--=== Style Switcher ===-->
-  <i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
-  <div class="style-switcher animated fadeInRight">
-    <div class="style-swticher-header">
-      <div class="style-switcher-heading">Style Switcher</div>
-      <div class="theme-close"><i class="icon-close"></i></div>
-    </div>
-
-    <div class="style-swticher-body">
-      <!-- Theme Colors -->
-      <div class="style-switcher-heading">Theme Colors</div>
-      <ul class="list-unstyled">
-        <li class="theme-default theme-active" data-style="default" data-header="light"></li>
-        <li class="theme-blue" data-style="blue" data-header="light"></li>
-        <li class="theme-orange" data-style="orange" data-header="light"></li>
-        <li class="theme-red" data-style="red" data-header="light"></li>
-        <li class="theme-light" data-style="light" data-header="light"></li>
-        <li class="theme-purple last" data-style="purple" data-header="light"></li>
-        <li class="theme-aqua" data-style="aqua" data-header="light"></li>
-        <li class="theme-brown" data-style="brown" data-header="light"></li>
-        <li class="theme-dark-blue" data-style="dark-blue" data-header="light"></li>
-        <li class="theme-light-green" data-style="light-green" data-header="light"></li>
-        <li class="theme-dark-red" data-style="dark-red" data-header="light"></li>
-        <li class="theme-teal last" data-style="teal" data-header="light"></li>
-      </ul>
-
-      <!-- Theme Skins -->
-      <div class="style-switcher-heading">Theme Skins</div>
-      <div class="row no-col-space margin-bottom-20 skins-section">
-        <div class="col-xs-6">
-          <button data-skins="default" class="btn-u btn-u-xs btn-u-dark btn-block active-switcher-btn handle-skins-btn">Light</button>
-        </div>
-        <div class="col-xs-6">
-          <button data-skins="dark" class="btn-u btn-u-xs btn-u-dark btn-block skins-btn">Dark</button>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- Layout Styles -->
-      <div class="style-switcher-heading">Layout Styles</div>
-      <div class="row no-col-space margin-bottom-20">
-        <div class="col-xs-6">
-          <a href="javascript:void(0);" class="btn-u btn-u-xs btn-u-dark btn-block active-switcher-btn wide-layout-btn">Wide</a>
-        </div>
-        <div class="col-xs-6">
-          <a href="javascript:void(0);" class="btn-u btn-u-xs btn-u-dark btn-block boxed-layout-btn">Boxed</a>
-        </div>
-      </div>
-
-      <hr>
-
-      <!-- Theme Type -->
-      <div class="style-switcher-heading">Theme Types and Versions</div>
-      <div class="row no-col-space margin-bottom-10">
-        <div class="col-xs-6">
-          <a href="E-Commerce/index.html" class="btn-u btn-u-xs btn-u-dark btn-block">Shop UI <small class="dp-block">Template</small></a>
-        </div>
-        <div class="col-xs-6">
-          <a href="One-Pages/Classic/index.html" class="btn-u btn-u-xs btn-u-dark btn-block">One Page <small class="dp-block">Template</small></a>
-        </div>
-      </div>
-
-      <div class="row no-col-space">
-        <div class="col-xs-6">
-          <a href="Blog-Magazine/index.html" class="btn-u btn-u-xs btn-u-dark btn-block">Blog <small class="dp-block">Template</small></a>
-        </div>
-        <div class="col-xs-6">
-          <a href="RTL/index.html" class="btn-u btn-u-xs btn-u-dark btn-block">RTL <small class="dp-block">Version</small></a>
-        </div>
-      </div>
-    </div>
-  </div><!--/style-switcher-->
-  <!--=== End Style Switcher ===-->
 
   <!-- JS Global Compulsory -->
   <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
