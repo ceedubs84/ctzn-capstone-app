@@ -1,476 +1,477 @@
-<div class="row">
-  <!-- Profile Content -->
-  <div class="col-md-9">
-    <div class="profile-body">
-      <!-- Start Tab v1 -->
-      <div class="tab-v1">
-        <ul class="nav nav-justified nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#<%= @legislators.first["bioguide_id"] %>"><%= @legislators.first["title"] %> <%= @legislators.first["last_name"] %></a></li>
-          <li><a data-toggle="tab" href="#<%= @legislators.second["bioguide_id"] %>"><%= @legislators.second["title"] %> <%= @legislators.second["last_name"] %></a></li>
-          <li><a data-toggle="tab" href="#<%= @legislators.last["bioguide_id"] %>"><%= @legislators.last["title"] %> <%= @legislators.last["last_name"] %></a></li>
-        </ul>
-        <!-- Tab Content -->
-        <div class="tab-content">
-          <div id="<%= @legislators.first["bioguide_id"] %>" class="profile-edit tab-pane fade in active">
-            <div class="profile-bio">
-              <div class="row">
-                <div class="col-md-5">
-                  <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.first["last_name"][0].upcase %>/<%= @legislators.first["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
-                </div>
-                <div class="col-md-7">
-                  <h2><%= @legislators.first["title"] %> <%= @legislators.first["first_name"] %> <%= @legislators.first["last_name"] %></h2>
-                  <div><strong>Job: </strong><%= @legislators.first["party"] %> - <%= @legislators.first["state_name"] %></div>
-                  <div><strong>Position: </strong><%= @legislators.first["leadership_role"] %></div>
-                  <hr>
-                  <div><strong>Phone: </strong><%= @legislators.first["phone"] %></div>
-                  <div><strong>Fax: </strong><%= @legislators.first["fax"] %></div>
-                  <div><strong>Website: </strong><%= @legislators.first["website"] %></div>
-                  <div><strong>Term: </strong><%= @legislators.first["term_start"] %> <strong>-</strong> <%= @legislators.first["term_end"] %></div>
-                </div>
-              </div>
-            </div><!--/end row-->
-
-            <hr>
-
-            <div class="row">
-              <!--Social Contacts v2 facebook-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+<div class="container">
+  <div class="row">
+    <!-- Profile Content -->
+    <div class="col-md-9">
+      <div class="profile-body">
+        <!-- Start Tab v1 -->
+        <div class="tab-v1">
+          <ul class="nav nav-justified nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#<%= @legislators.first["bioguide_id"] %>"><%= @legislators.first["title"] %> <%= @legislators.first["last_name"] %></a></li>
+            <li><a data-toggle="tab" href="#<%= @legislators.second["bioguide_id"] %>"><%= @legislators.second["title"] %> <%= @legislators.second["last_name"] %></a></li>
+            <li><a data-toggle="tab" href="#<%= @legislators.last["bioguide_id"] %>"><%= @legislators.last["title"] %> <%= @legislators.last["last_name"] %></a></li>
+          </ul>
+          <!-- Tab Content -->
+          <div class="tab-content">
+            <div id="<%= @legislators.first["bioguide_id"] %>" class="profile-edit tab-pane fade in active">
+              <div class="profile-bio">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.first["last_name"][0].upcase %>/<%= @legislators.first["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
                   </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.first["facebook_id"] %>"></a></li>
-                      <div id="fb-root">
-                        <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>">Facebook</a></blockquote>
+                  <div class="col-md-7">
+                    <h2><%= @legislators.first["title"] %> <%= @legislators.first["first_name"] %> <%= @legislators.first["last_name"] %></h2>
+                    <div><strong>Job: </strong><%= @legislators.first["party"] %> - <%= @legislators.first["state_name"] %></div>
+                    <div><strong>Position: </strong><%= @legislators.first["leadership_role"] %></div>
+                    <hr>
+                    <div><strong>Phone: </strong><%= @legislators.first["phone"] %></div>
+                    <div><strong>Fax: </strong><%= @legislators.first["fax"] %></div>
+                    <div><strong>Website: </strong><%= @legislators.first["website"] %></div>
+                    <div><strong>Term: </strong><%= @legislators.first["term_start"] %> <strong>-</strong> <%= @legislators.first["term_end"] %></div>
+                  </div>
+                </div>
+              </div><!--/end row-->
+
+              <hr>
+
+              <div class="row">
+                <!--Social Contacts v2 facebook-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.first["facebook_id"] %>"></a></li>
+                        <div id="fb-root">
+                          <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.first["facebook_id"] %>">Facebook</a></blockquote>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2-->
+
+                <!--Social Contacts v2 youtube-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.first["youtube_id"] %>"></a></li>
+                        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.first["youtube_id"] %>" width="480" height="400"></iframe>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 youtube-->
+              </div><!--/end row1-->
+
+              <hr>
+
+              <div class="row">
+                <!--Social Contacts v2 twitter-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.first["twitter_id"] %>"></a></li>
+                        <div>
+                          <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.first["twitter_id"] %>">Tweets</a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 twitter-->
+
+                <!--Design Skills ADD CHARTS HERE circles-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
+                          <div class="circle margin-bottom-20" id="circle-4"></div>
+                          <h3 class="heading-xs">Sponsored Bills Passed</h3>
+                          <p>The number of sponsored bills this legislator has passed.</p>
+                        </div>
+                        <div class="p-chart col-sm-6 col-xs-6">
+                          <div class="circle margin-bottom-20" id="circle-5"></div>
+                          <h3 class="heading-xs">Votes with Party</h3>
+                          <p>Percentage of time legislator votes with party.</p>
                         </div>
                       </div>
-                    </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!--End Social Contacts v2-->
+                <!--End Design Skills circles-->
+              </div><!--/end row2-->
 
-              <!--Social Contacts v2 youtube-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.first["youtube_id"] %>"></a></li>
-                      <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.first["youtube_id"] %>" width="480" height="400"></iframe>
-                    </ul>
-                  </div>
+              <hr>
+
+              <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
+              <!-- <div class="panel panel-profile">
+                <div class="panel-heading overflow-h">
+                  <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
+                  <a href="#"><i class="fa fa-cog pull-right"></i></a>
                 </div>
-              </div>
-              <!--End Social Contacts v2 youtube-->
-            </div><!--/end row1-->
-
-            <hr>
-
-            <div class="row">
-              <!--Social Contacts v2 twitter-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.first["twitter_id"] %>"></a></li>
-                      <div>
-                        <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.first["twitter_id"] %>">Tweets</a>
+                <div class="panel-body margin-bottom-40">
+                  <ul class="timeline-v2 timeline-me">
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>BFC NYC Partners</h2>
+                        <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
                       </div>
-                    </ul>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Freelance</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Toren Condo</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+              <!--End Timeline row 4??-->
+
+              <hr>
+            </div>
+
+            <div id="<%= @legislators.second["bioguide_id"] %>" class="profile-edit tab-pane fade">
+              <div class="profile-bio">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.second["last_name"][0].upcase %>/<%= @legislators.second["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
+                  </div>
+                  <div class="col-md-7">
+                    <h2><%= @legislators.second["title"] %> <%= @legislators.second["first_name"] %> <%= @legislators.second["last_name"] %></h2>
+                    <div><strong>Job: </strong><%= @legislators.second["party"] %> - <%= @legislators.second["state_name"] %></div>
+                    <div><strong>Position: </strong><%= @legislators.second["leadership_role"] %></div>
+                    <hr>
+                    <div><strong>Phone: </strong><%= @legislators.second["phone"] %></div>
+                    <div><strong>Fax: </strong><%= @legislators.second["fax"] %></div>
+                    <div><strong>Website: </strong><%= @legislators.second["website"] %></div>
+                    <div><strong>Term: </strong><%= @legislators.second["term_start"] %> <strong>-</strong> <%= @legislators.second["term_end"] %></div>
                   </div>
                 </div>
-              </div>
-              <!--End Social Contacts v2 twitter-->
+              </div><!--/end row-->
 
-              <!--Design Skills ADD CHARTS HERE circles-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
-                        <div class="circle margin-bottom-20" id="circle-4"></div>
-                        <h3 class="heading-xs">Sponsored Bills Passed</h3>
-                        <p>The number of sponsored bills this legislator has passed.</p>
-                      </div>
-                      <div class="p-chart col-sm-6 col-xs-6">
-                        <div class="circle margin-bottom-20" id="circle-5"></div>
-                        <h3 class="heading-xs">Votes with Party</h3>
-                        <p>Percentage of time legislator votes with party.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--End Design Skills circles-->
-            </div><!--/end row2-->
-
-            <hr>
-
-            <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
-            <!-- <div class="panel panel-profile">
-              <div class="panel-heading overflow-h">
-                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
-                <a href="#"><i class="fa fa-cog pull-right"></i></a>
-              </div>
-              <div class="panel-body margin-bottom-40">
-                <ul class="timeline-v2 timeline-me">
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>BFC NYC Partners</h2>
-                      <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Freelance</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Toren Condo</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <!--End Timeline row 4??-->
-
-            <hr>
-          </div>
-
-          <div id="<%= @legislators.second["bioguide_id"] %>" class="profile-edit tab-pane fade">
-            <div class="profile-bio">
+              <hr>
+              <!-- row 1 -->
               <div class="row">
-                <div class="col-md-5">
-                  <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.second["last_name"][0].upcase %>/<%= @legislators.second["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
-                </div>
-                <div class="col-md-7">
-                  <h2><%= @legislators.second["title"] %> <%= @legislators.second["first_name"] %> <%= @legislators.second["last_name"] %></h2>
-                  <div><strong>Job: </strong><%= @legislators.second["party"] %> - <%= @legislators.second["state_name"] %></div>
-                  <div><strong>Position: </strong><%= @legislators.second["leadership_role"] %></div>
-                  <hr>
-                  <div><strong>Phone: </strong><%= @legislators.second["phone"] %></div>
-                  <div><strong>Fax: </strong><%= @legislators.second["fax"] %></div>
-                  <div><strong>Website: </strong><%= @legislators.second["website"] %></div>
-                  <div><strong>Term: </strong><%= @legislators.second["term_start"] %> <strong>-</strong> <%= @legislators.second["term_end"] %></div>
-                </div>
-              </div>
-            </div><!--/end row-->
-
-            <hr>
-            <!-- row 1 -->
-            <div class="row">
-              <!--Social Contacts v2 facebook-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                <!--Social Contacts v2 facebook-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.second["facebook_id"] %>"></a></li>
+                        <div id="fb-root">
+                          <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>">Facebook</a></blockquote>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.second["facebook_id"] %>"></a></li>
-                      <div id="fb-root">
-                        <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.second["facebook_id"] %>">Facebook</a></blockquote>
+                </div>
+                <!--End Social Contacts v2-->
+
+                <!--Social Contacts v2 youtube-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.second["youtube_id"] %>"></a></li>
+                        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.second["youtube_id"] %>" width="480" height="400"></iframe>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 youtube-->
+              </div><!--/end row1-->
+
+              <hr>
+
+              <div class="row">
+                <!--Social Contacts v2 twitter-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.second["twitter_id"] %>"></a></li>
+                        <div>
+                          <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.second["twitter_id"] %>">Tweets</a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 twitter-->
+
+                <!--Design Skills ADD CHARTS HERE circles-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
+                          <div class="circle margin-bottom-20" id="circle-4"></div>
+                          <h3 class="heading-xs">% Sponsored Bills Passed</h3>
+                          <p>The number of sponsored bills this legislator has passed.</p>
+                        </div>
+                        <div class="p-chart col-sm-6 col-xs-6">
+                          <div class="circle margin-bottom-20" id="circle-5"></div>
+                          <h3 class="heading-xs">% Vote with Party</h3>
+                          <p>Percentage of time legislator votes with party.</p>
                         </div>
                       </div>
-                    </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!--End Social Contacts v2-->
+                <!--End Design Skills circles-->
+              </div><!--/end row2-->
 
-              <!--Social Contacts v2 youtube-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.second["youtube_id"] %>"></a></li>
-                      <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.second["youtube_id"] %>" width="480" height="400"></iframe>
-                    </ul>
-                  </div>
+              <hr>
+
+              <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
+              <!-- <div class="panel panel-profile">
+                <div class="panel-heading overflow-h">
+                  <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
+                  <a href="#"><i class="fa fa-cog pull-right"></i></a>
                 </div>
-              </div>
-              <!--End Social Contacts v2 youtube-->
-            </div><!--/end row1-->
-
-            <hr>
-
-            <div class="row">
-              <!--Social Contacts v2 twitter-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.second["twitter_id"] %>"></a></li>
-                      <div>
-                        <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.second["twitter_id"] %>">Tweets</a>
+                <div class="panel-body margin-bottom-40">
+                  <ul class="timeline-v2 timeline-me">
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>BFC NYC Partners</h2>
+                        <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
                       </div>
-                    </ul>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Freelance</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Toren Condo</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+              <!--End Timeline row 3??-->
+
+              <hr>
+            </div>
+
+            <div id="<%= @legislators.last["bioguide_id"] %>" class="profile-edit tab-pane fade">
+              <div class="profile-bio">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.last["last_name"][0].upcase %>/<%= @legislators.last["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
+                  </div>
+                  <div class="col-md-7">
+                    <h2><%= @legislators.last["title"] %> <%= @legislators.last["first_name"] %> <%= @legislators.last["last_name"] %></h2>
+                    <div><strong>Job: </strong><%= @legislators.last["party"] %> - <%= @legislators.last["state_name"] %></div>
+                    <div><strong>Position: </strong><%= @legislators.last["leadership_role"] %></div>
+                    <hr>
+                    <div><strong>Phone: </strong><%= @legislators.last["phone"] %></div>
+                    <div><strong>Fax: </strong><%= @legislators.last["fax"] %></div>
+                    <div><strong>Website: </strong><%= @legislators.last["website"] %></div>
+                    <div><strong>Term: </strong><%= @legislators.last["term_start"] %> <strong>-</strong> <%= @legislators.last["term_end"] %></div>
                   </div>
                 </div>
-              </div>
-              <!--End Social Contacts v2 twitter-->
+              </div><!--/end row-->
 
-              <!--Design Skills ADD CHARTS HERE circles-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
-                        <div class="circle margin-bottom-20" id="circle-4"></div>
-                        <h3 class="heading-xs">% Sponsored Bills Passed</h3>
-                        <p>The number of sponsored bills this legislator has passed.</p>
-                      </div>
-                      <div class="p-chart col-sm-6 col-xs-6">
-                        <div class="circle margin-bottom-20" id="circle-5"></div>
-                        <h3 class="heading-xs">% Vote with Party</h3>
-                        <p>Percentage of time legislator votes with party.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--End Design Skills circles-->
-            </div><!--/end row2-->
+              <hr>
 
-            <hr>
-
-            <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
-            <!-- <div class="panel panel-profile">
-              <div class="panel-heading overflow-h">
-                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
-                <a href="#"><i class="fa fa-cog pull-right"></i></a>
-              </div>
-              <div class="panel-body margin-bottom-40">
-                <ul class="timeline-v2 timeline-me">
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>BFC NYC Partners</h2>
-                      <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Freelance</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Toren Condo</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <!--End Timeline row 3??-->
-
-            <hr>
-          </div>
-
-          <div id="<%= @legislators.last["bioguide_id"] %>" class="profile-edit tab-pane fade">
-            <div class="profile-bio">
               <div class="row">
-                <div class="col-md-5">
-                  <img class="img-responsive md-margin-bottom-10" src="//bioguide.congress.gov/bioguide/photo/<%= @legislators.last["last_name"][0].upcase %>/<%= @legislators.last["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
-                </div>
-                <div class="col-md-7">
-                  <h2><%= @legislators.last["title"] %> <%= @legislators.last["first_name"] %> <%= @legislators.last["last_name"] %></h2>
-                  <div><strong>Job: </strong><%= @legislators.last["party"] %> - <%= @legislators.last["state_name"] %></div>
-                  <div><strong>Position: </strong><%= @legislators.last["leadership_role"] %></div>
-                  <hr>
-                  <div><strong>Phone: </strong><%= @legislators.last["phone"] %></div>
-                  <div><strong>Fax: </strong><%= @legislators.last["fax"] %></div>
-                  <div><strong>Website: </strong><%= @legislators.last["website"] %></div>
-                  <div><strong>Term: </strong><%= @legislators.last["term_start"] %> <strong>-</strong> <%= @legislators.last["term_end"] %></div>
-                </div>
-              </div>
-            </div><!--/end row-->
-
-            <hr>
-
-            <div class="row">
-              <!--Social Contacts v2 facebook-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                <!--Social Contacts v2 facebook-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.last["facebook_id"] %>"></a></li>
+                        <div id="fb-root">
+                          <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>">Facebook</a></blockquote>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x fb fa fa-facebook fa-2x"></i><a href="https://facebook.com/<%= @legislators.last["facebook_id"] %>"></a></li>
-                      <div id="fb-root">
-                        <div class="fb-page" data-href="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/<%= @legislators.last["facebook_id"] %>">Facebook</a></blockquote>
+                </div>
+                <!--End Social Contacts v2-->
+
+                <!--Social Contacts v2 youtube-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.last["youtube_id"] %>"></a></li>
+                        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.last["youtube_id"] %>" width="480" height="400"></iframe>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 youtube-->
+              </div><!--/end row1-->
+
+              <hr>
+
+              <div class="row">
+                <!--Social Contacts v2 twitter-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-unstyled social-contacts-v3">
+                        <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.last["twitter_id"] %>"></a></li>
+                        <div>
+                          <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.last["twitter_id"] %>">Tweets</a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--End Social Contacts v2 twitter-->
+
+                <!--Design Skills ADD CHARTS HERE circles-->
+                <div class="col-sm-6">
+                  <div class="panel panel-profile">
+                    <div class="panel-heading overflow-h">
+                      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
+                      <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
+                          <div class="circle margin-bottom-20" id="circle-4"></div>
+                          <h3 class="heading-xs">% Sponsored Bills Passed</h3>
+                          <p>The number of sponsored bills this legislator has passed.</p>
+                        </div>
+                        <div class="p-chart col-sm-6 col-xs-6">
+                          <div class="circle margin-bottom-20" id="circle-5"></div>
+                          <h3 class="heading-xs">% Vote with Party</h3>
+                          <p>Percentage of time legislator votes with party.</p>
                         </div>
                       </div>
-                    </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!--End Social Contacts v2-->
+                <!--End Design Skills circles-->
+              </div><!--/end row2-->
 
-              <!--Social Contacts v2 youtube-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> More Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x yt fa fa-youtube fa-2x"></i><a href="<%= @legislators.last["youtube_id"] %>"></a></li>
-                      <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @legislators.last["youtube_id"] %>" width="480" height="400"></iframe>
-                    </ul>
-                  </div>
+              <hr>
+
+              <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
+              <!-- <div class="panel panel-profile">
+                <div class="panel-heading overflow-h">
+                  <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
+                  <a href="#"><i class="fa fa-cog pull-right"></i></a>
                 </div>
-              </div>
-              <!--End Social Contacts v2 youtube-->
-            </div><!--/end row1-->
-
-            <hr>
-
-            <div class="row">
-              <!--Social Contacts v2 twitter-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Social Contacts <small>(option 2)</small></h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-unstyled social-contacts-v3">
-                      <li><i class="rounded-x tw fa fa-twitter fa-2x"></i><a href="https://twitter.com/<%= @legislators.last["twitter_id"] %>"></a></li>
-                      <div>
-                        <a class="twitter-timeline" data-width="200" data-height="500" href="https://twitter.com/<%= @legislators.last["twitter_id"] %>">Tweets</a>
+                <div class="panel-body margin-bottom-40">
+                  <ul class="timeline-v2 timeline-me">
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>BFC NYC Partners</h2>
+                        <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
                       </div>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!--End Social Contacts v2 twitter-->
-
-              <!--Design Skills ADD CHARTS HERE circles-->
-              <div class="col-sm-6">
-                <div class="panel panel-profile">
-                  <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Vote Data</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                  </div>
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
-                        <div class="circle margin-bottom-20" id="circle-4"></div>
-                        <h3 class="heading-xs">% Sponsored Bills Passed</h3>
-                        <p>The number of sponsored bills this legislator has passed.</p>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Freelance</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
                       </div>
-                      <div class="p-chart col-sm-6 col-xs-6">
-                        <div class="circle margin-bottom-20" id="circle-5"></div>
-                        <h3 class="heading-xs">% Vote with Party</h3>
-                        <p>Percentage of time legislator votes with party.</p>
+                    </li>
+                    <li>
+                      <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
+                      <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                      <div class="cbp_tmlabel">
+                        <h2>Toren Condo</h2>
+                        <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
                       </div>
-                    </div>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <!--End Design Skills circles-->
-            </div><!--/end row2-->
+              </div> -->
+              <!--End Timeline row 3??-->
 
-            <hr>
+              <hr>
+            </div>
 
-            <!--Timeline ADD LATEST SPONSORED BILLS HERE??--> 
-            <!-- <div class="panel panel-profile">
-              <div class="panel-heading overflow-h">
-                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i> Experience</h2>
-                <a href="#"><i class="fa fa-cog pull-right"></i></a>
-              </div>
-              <div class="panel-body margin-bottom-40">
-                <ul class="timeline-v2 timeline-me">
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Mobile Design</span> <span>2012 - Current</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>BFC NYC Partners</h2>
-                      <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Peasprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Web Designer</span> <span>2007 - 2012</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Freelance</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <time datetime="" class="cbp_tmtime"><span>Photodesigner</span> <span>2003 - 2007</span></time>
-                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
-                    <div class="cbp_tmlabel">
-                      <h2>Toren Condo</h2>
-                      <p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <!--End Timeline row 3??-->
-
-            <hr>
           </div>
-
+          <!-- End Tab Content -->
         </div>
-        <!-- End Tab Content -->
+        <!-- End Tab v1 -->
       </div>
-      <!-- End Tab v1 -->
+      <!-- End Profile Body -->
     </div>
-    <!-- End Profile Body -->
+    <!-- End Profile Content -->
   </div>
-  <!-- End Profile Content -->
 </div>
-
 <!--Bedfellows embed-->
 <iframe src="http://widgets.cqpress.com/bedfellows/bedfellows.aspx" width="302" height="442"></iframe>
 <!--End Bedfellows embed-->
