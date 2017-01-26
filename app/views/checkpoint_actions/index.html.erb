@@ -4,15 +4,14 @@
   <div ng-controller="actionsCtrl" ng-init="setup()">
     <div class="table-search-v1 margin-bottom-20">
       <div class="table-responsive">
-        <input ng-model="dateFilter">
         <table class="table table-hover table-bordered table-striped">
           <thead>
             <tr>
-              <th>Bill</th>
-              <th>Action Description</th>
-              <th class="hidden-sm" ng-click="changeOrderAttribute(date)">Due Date</th>
-              <th>Status</th>
-              <th>Action ID</th>
+              <th ng-click="changeOrderAttribute(user_bill_id)">Bill</th>
+              <th ng-click="changeOrderAttribute(description)">Action Description</th>
+              <th ng-click="changeOrderAttribute(date)">Due Date</th>
+              <th ng-click="changeOrderAttribute(status)">Status</th>
+              <th ng-click="changeOrderAttribute(action_id)">Action ID</th>
             </tr>
           </thead>
             <tbody>
