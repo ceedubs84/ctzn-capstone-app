@@ -21,3 +21,17 @@
 .modal-backdrop {
   position: relative !important;
 }
+
+.ng-enter, .ng-move{
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.ng-leave{
+  -webkit-animation: zoomOutLeft 1s;
+  -moz-animation: zoomOutLeft 1s;
+  -o-animation: zoomOutLeft 1s;
+  animation: zoomOutLeft 1s;
+}
