@@ -33,7 +33,7 @@ class Api::V1::CheckpointActionsController < ApplicationController
     @checkpoint_action.save
     
     flash[:success] = "Action Completed!! Great job!"
-    render 'show.json.jbuilder'
+    render 'index.json.jbuilder'
   end
 
   def show

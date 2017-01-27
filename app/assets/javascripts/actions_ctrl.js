@@ -14,11 +14,11 @@
     $scope.toggleComplete = function(inputCheckpointAction) {
 
       var params = {
-        action_id: inputCheckpointAction.action_id,
+        actionId: inputCheckpointAction.action_id,
         status: "Complete",
         description: inputCheckpointAction.description,
         date: inputCheckpointAction.date,
-        user_bill_id: inputCheckpointAction.user_bill_id,
+        userBillId: inputCheckpointAction.user_bill_id,
       };
       $http.patch('/api/v1/checkpoint_actions/' + inputCheckpointAction.id, params).then(function(response) {
         var index = $scope.checkpointActions.indexOf(inputCheckpointAction);
@@ -30,10 +30,10 @@
 
     $scope.addCheckpointAction = function(inputActionId, inputDescription, inputDate, inputUserBillId, inputUserId) {
       var params = {
-        actionId: inputActionId,
+        action_id: inputActionId,
         description: inputDescription,
         date: inputDate,
-        userBillId: inputUserBillId,
+        user_bill_id: inputUserBillId,
         userId: inputUserId,
       };
       $http.post('/api/v1/checkpoint_actions', params).then(function(response) {

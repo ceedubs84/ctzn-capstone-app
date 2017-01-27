@@ -5,13 +5,13 @@
       <div class="container content-md">
         <% @legislators.each do |legislator| %>
           <div class="row about-me">
-            <div class="col-sm-4 shadow-wrapper md-margin-bottom-40">
+            <div class="col-sm-2 md-margin-bottom-40">
               <div class="box-shadow shadow-effect-2">
-                <img class="img-responsive img-bordered full-width" src="//bioguide.congress.gov/bioguide/photo/<%= legislator["last_name"][0].upcase %>/<%= legislator["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
+                <img class="img-responsive img-bordered" src="//bioguide.congress.gov/bioguide/photo/<%= legislator["last_name"][0].upcase %>/<%= legislator["bioguide_id"] %>.jpg" alt="https://media.giphy.com/media/tIJGdiUQAa5TG/giphy.gif">
               </div>
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-10">
               <div class="overflow-h">
                 <div class="pull-left">
                   <h2><%= legislator["title"] %> <%= legislator["first_name"] %> <%= legislator["last_name"] %></h2>
