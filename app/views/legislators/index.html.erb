@@ -18,9 +18,9 @@
                   <span><%= legislator["party"] %> <%= legislator["state_name"] %></span>
                 </div>
                 <ul class="social-icons pull-right">
-                  <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="<%= legislator["facebook_id"] %>"></a></li>
-                  <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="<%= legislator["twitter_id"] %>"></a></li>
-                  <li><a class="rounded-x social_youtube" data-original-title="Youtube" href="<%= legislator["youtube_id"] %>"></a></li>
+                  <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="https://facebook.com/<%= legislator["facebook_id"] %>"></a></li>
+                  <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="https://twitter.com/<%= legislator["twitter_id"] %>"></a></li>
+                  <li><a class="rounded-x social_youtube" data-original-title="Youtube" href="https://youtube.com/<%= legislator["youtube_id"] %>"></a></li>
                 </ul>
               </div>
                 <div class="legislators">
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="col-md-4 md-margin-bottom-20">
-              <div id="fb-root">
+              <div id="youtube-root">
                 <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= legislator["youtube_id"] %>" width="100%" height="400"></iframe>
               </div>
             </div>
