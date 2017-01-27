@@ -7,15 +7,15 @@
         <table class="table table-hover table-bordered table-striped">
           <thead>
             <tr>
-              <th ng-click="changeOrderAttribute(user_bill_id)">Bill</th>
-              <th ng-click="changeOrderAttribute(description)">Action Description</th>
+              <th>Bill</th>
+              <th>Action Description</th>
               <th ng-click="changeOrderAttribute(date)">Due Date</th>
-              <th ng-click="toggleComplete">Status</th>
-              <th ng-click="changeOrderAttribute(action_id)">Action ID</th>
+              <th>Status</th>
+              <th>Action ID</th>
             </tr>
           </thead>
             <tbody>
-              <tr ng-repeat="checkpointAction in checkpointActions | orderBy:orderAttribute:isOrderDescending">
+              <tr ng-repeat="checkpointAction in checkpointActions">
                 <td>{{ checkpointAction.user_bill_id }}</td>
                 <td>{{ checkpointAction.description }}</td>
                 <td>{{ checkpointAction.date }}</td>

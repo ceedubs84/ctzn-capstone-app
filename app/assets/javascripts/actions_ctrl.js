@@ -14,11 +14,11 @@
     $scope.toggleComplete = function(inputCheckpointAction) {
 
       var params = {
-        actionId: inputCheckpointAction.action_id,
+        action_id: inputCheckpointAction.action_id,
         status: "Complete",
         description: inputCheckpointAction.description,
         date: inputCheckpointAction.date,
-        userBillId: inputCheckpointAction.user_bill_id,
+        user_bill_id: inputCheckpointAction.user_bill_id,
       };
       $http.patch('/api/v1/checkpoint_actions/' + inputCheckpointAction.id, params).then(function(response) {
         var index = $scope.checkpointActions.indexOf(inputCheckpointAction);
