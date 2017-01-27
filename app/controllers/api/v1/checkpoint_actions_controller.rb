@@ -31,8 +31,6 @@ class Api::V1::CheckpointActionsController < ApplicationController
     @checkpoint_action.user_id = current_user.id
     @checkpoint_action.status = params[:status]
     @checkpoint_action.save
-    p "***** ERRORS ******"
-    p @checkpoint_action.errors.full_messages
     
     flash[:success] = "Action Completed!! Great job!"
     render 'show.json.jbuilder'
