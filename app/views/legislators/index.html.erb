@@ -23,11 +23,13 @@
                   <li><a class="rounded-x social_youtube" data-original-title="Youtube" href="<%= legislator["youtube_id"] %>"></a></li>
                 </ul>
               </div>
-                <div><strong>Position: </strong><%= legislator["leadership_role"] %></div>
-                <div><strong>Phone: </strong><%= legislator["phone"] %></div>
-                <div><strong>Fax: </strong><%= legislator["fax"] %></div>
-                <div><strong>Website: </strong><%= legislator["website"] %></div>
-                <div><strong>Term: </strong><%= legislator["term_start"] %> <strong>-</strong> <%= legislator["term_end"] %></div><br>
+                <div class="legislators">
+                  <div><strong>Position: </strong><%= legislator["leadership_role"] %></div>
+                  <div><strong>Phone: </strong><%= legislator["phone"] %></div>
+                  <div><strong>Fax: </strong><%= legislator["fax"] %></div>
+                  <div><strong>Website: </strong><%= legislator["website"] %></div>
+                  <div><strong>Term: </strong><%= legislator["term_start"] %> <strong>-</strong> <%= legislator["term_end"] %></div><br>
+                </div>
             </div>
           </div>
           <hr>
@@ -106,7 +108,6 @@
               </script>
             </div>
           </div>
-          <hr>
           <!-- End ROW3 -->
       </div>
     </div>
