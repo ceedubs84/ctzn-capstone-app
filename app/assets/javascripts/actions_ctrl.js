@@ -44,12 +44,14 @@
     };
 
     $scope.changeOrderAttribute = function(inputAttribute) {
+      console.log(inputAttribute);
       if (inputAttribute === $scope.orderAttribute) {
         $scope.isOrderDescending = !$scope.isOrderDescending;
       } else {
         $scope.isOrderDescending = false;
       }
       $scope.orderAttribute = inputAttribute;
+      $scope.orderRecords()
     };
 
     $scope.getSortIcon = function(inputAttribute) {
@@ -62,6 +64,11 @@
       } else {
         return '';
       }
+    };
+
+    $scope.orderRecords = function() {
+      var order = $scope.isOrderDescending ? '-' : '';
+      return order + $scope.orderAttribute;
     };
     
     window.$scope = $scope;
