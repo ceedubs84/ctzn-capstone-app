@@ -7,11 +7,11 @@
         <table class="table table-hover table-bordered" style="background-color: #ccc; opacity: 0.8">
           <thead>
             <tr>
-              <th>Bill</th>
-              <th>Action Description</th>
+              <th ng-click="changeOrderAttribute('user_bill_id')">Bill</th>
+              <th ng-click="changeOrderAttribute('description')">Action Description</th>
               <th ng-click="changeOrderAttribute('date')">Due Date {{ getSortIcon('date') }}</th>
-              <th>Status</th>
-              <th>Action ID</th>
+              <th ng-click="changeOrderAttribute('status')">Status</th>
+              <th ng-click="changeOrderAttribute('action_id')">Action ID</th>
             </tr>
           </thead>
             <tbody>

@@ -51,7 +51,6 @@
         $scope.isOrderDescending = false;
       }
       $scope.orderAttribute = inputAttribute;
-      $scope.orderRecords()
     };
 
     $scope.getSortIcon = function(inputAttribute) {
